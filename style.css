@@ -1,4 +1,7 @@
-/* RESET I OSNOVNI STILOVI */
+/* ==========================================
+   GLOBAL STYLES & RESET
+   ========================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,187 +9,260 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    line-height: 1.6;
-    color: #222222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
     background-color: #ffffff;
+    line-height: 1.6;
 }
 
-/* GLAVNI KONTEJNER (DEFINIŠE OGRANIČENU ŠIRINU ZA CEO SAJT) */
+/* Base wrapper to align header, intro, and scrollytelling content */
 .content-wrapper {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* 1. HERO SLIKA I NASLOV OVERLAY */
+/* ==========================================
+   1. HERO SECTION & HEADER
+   ========================================== */
+
 .hero-container {
     position: relative;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 25px;
-    border-radius: 8px;
+    height: 70vh;
+    min-height: 400px;
     overflow: hidden;
+    margin-bottom: 24px;
 }
 
 .hero-image {
     width: 100%;
-    height: 60vh;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
+/* Dark gradient layer over the hero image for contrast */
 .hero-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    padding: 40px 30px 20px 30px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    box-sizing: border-box;
     color: #ffffff;
 }
 
 .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 10px;
+    line-height: 1.2;
+    margin-bottom: 12px;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    font-weight: 300;
-    opacity: 0.95;
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.9;
 }
 
-/* 2. DATUM, AUTOR I UVODNI TEKST (ISPOD SLIKE) */
+/* Meta info & intro section directly below hero image */
 .article-header {
     margin-bottom: 40px;
 }
 
 .meta-info {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #666666;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 12px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.meta-info .author {
-    font-weight: 600;
-    color: #333333;
-}
-
-.intro-text {
-    font-size: 1.25rem;
+.intro-text p {
+    font-size: 1.2rem;
     line-height: 1.7;
     color: #333333;
 }
 
-.intro-text p {
-    margin-bottom: 1.2rem;
-}
+/* ==========================================
+   2. SCROLLYTELLING LAYOUT
+   (Text on the LEFT, Sticky Map on the RIGHT)
+   ========================================== */
 
-/* 3. SCROLLYTELLING SEKCIJA (MAPA LEVO, TEKST DESNO) */
 #scrolly {
-    position: relative;
     display: flex;
-    align-items: flex-start;
+    /* Reverses row order so the map sits on the right and text stays on the left */
+    flex-direction: row-reverse; 
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
     margin-top: 20px;
 }
 
-/* FIKSIRANA MAPA (LEVA KOLONA - 50%) */
-#map {
-    position: sticky;
-    top: 20px;
-    width: 50%;
-    height: 85vh;
-    border-radius: 8px;
-    z-index: 1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* SCROLLY TEKST (DESNA KOLONA - 50%) */
+/* Left side: Text column */
 article {
+    width: 45%;
     position: relative;
-    width: 50%;
-    padding-left: 30px;
     z-index: 2;
 }
 
-.step {
-    margin-bottom: 75vh;
-    padding: 24px;
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid #e2e8f0;
+/* Right side: Sticky map container */
+#map {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-.step:last-child {
-    margin-bottom: 30vh;
-}
-
-.step h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #1a202c;
-}
-
-.step p {
-    font-size: 1rem;
-    color: #4a5568;
-}
-
-/* SLIKE I GALERIJE UNUTAR DESNE KOLONE TEKSTA */
-.media-block {
-    margin: 20px 0;
-    border-radius: 6px;
     overflow: hidden;
 }
 
+/* ==========================================
+   3. SCROLL STEPS & SPACING FIXES
+   ========================================== */
+
+.step {
+    /* Reduced bottom margin to eliminate huge blank spaces between steps */
+    margin-bottom: 30vh; 
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.step:last-child {
+    margin-bottom: 15vh;
+}
+
+.step h3 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.step p {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #2d3748;
+}
+
+.step p:last-child {
+    margin-bottom: 0;
+}
+
+/* Section Title Colors */
+.sub-sanitary { color: #1e3a8a; }
+.sub-nonsanitary { color: #9a3412; }
+.sub-wild { color: #991b1b; }
+
+/* ==========================================
+   4. MEDIA, GALLERIES & EMBEDS FIX
+   ========================================== */
+
+/* Restrict all images to their container to prevent overflowing */
+article img,
+.gallery img,
 .media-block img {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.gallery, 
+.media-block, 
+.graphic {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gallery slideshow container */
+.gallery-slides {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-slides img {
+    display: none;
+}
+
+.gallery-slides img.active {
     display: block;
 }
 
-.caption {
-    font-size: 0.85rem;
+/* Gallery Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 14px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 4px;
+    user-select: none;
+    transition: background 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.prev { left: 8px; }
+.next { right: 8px; }
+
+/* Photo Source Tags */
+.source-tag {
+    display: block;
+    font-size: 0.75rem;
     color: #718096;
     margin-top: 6px;
     font-style: italic;
 }
 
-/* PRILAGOĐAVANJE ZA MOBILNE TELEFONE */
+/* ==========================================
+   5. RESPONSIVE DESIGN (MOBILE ADAPTATION)
+   ========================================== */
+
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
+    /* Stack map and text vertically on mobile devices */
     #scrolly {
-        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    
+    article, #map {
+        width: 100%;
     }
 
     #map {
-        width: 100%;
         height: 45vh;
-        position: sticky;
-        top: 0;
         margin-bottom: 20px;
     }
 
-    article {
-        width: 100%;
-        padding-left: 0;
-    }
-
     .step {
-        margin-bottom: 50vh;
+        margin-bottom: 20vh;
+        padding: 16px;
     }
 }
