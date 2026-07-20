@@ -1,5 +1,7 @@
+// Mapbox Access Token
 mapboxgl.accessToken = 'pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ0dWZwMTUwNzM2MndzNXpybHYxYWduIn0.lw4CZAdqTwqyAP0qZyKCzg';
 
+// Initialize Mapbox map instance
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/petar92/cmrifkhvq000w01s828d2ange',
@@ -8,7 +10,7 @@ const map = new mapboxgl.Map({
     pitch: 0
 });
 
-// Svi layeri navedeni u projektu
+// Array containing all vector/data layer IDs configured in Mapbox Studio
 const allLayers = [
     'sanitary_landfill',
     'dep_duboko',
@@ -28,7 +30,7 @@ const allLayers = [
     'new_sanitary_landfill'
 ];
 
-// Funkcija za kontrolu vidljivosti layera
+// Helper function to toggle layer visibility based on active step requirements
 function showOnly(activeLayers) {
     allLayers.forEach(layer => {
         if (map.getLayer(layer)) {
@@ -42,7 +44,7 @@ function showOnly(activeLayers) {
 }
 
 map.on('load', () => {
-    // Scrollama Inicijalizacija
+    // Initialize Scrollama for scrollytelling interaction
     const scroller = scrollama();
 
     scroller
@@ -59,7 +61,7 @@ map.on('load', () => {
             const pitch = parseFloat(el.getAttribute('data-pitch'));
             const layers = el.getAttribute('data-layers').split(',').map(s => s.trim());
 
-            // Pomakni mapu
+            // Smoothly transition map camera to new focus coordinates
             map.flyTo({
                 center: [lng, lat],
                 zoom: zoom,
@@ -68,16 +70,19 @@ map.on('load', () => {
                 duration: 2000
             });
 
-            // Prikaži odgovarajuće slojeve
+            // Update visible layers for the active step
             showOnly(layers);
         });
 
+    // Recalculate Scrollama trigger points on window resize
     window.addEventListener('resize', scroller.resize);
 });
 
-// GALERIJE SLIKA LOGIKA
+// Helper function for navigating inline image slider/galleries
 function moveSlide(galleryId, direction) {
     const gallery = document.getElementById(galleryId);
+    if (!gallery) return;
+    
     const slides = gallery.querySelectorAll('.gallery-slides img');
     let activeIndex = -1;
 
