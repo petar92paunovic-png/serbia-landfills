@@ -6,8 +6,8 @@
     <title>Serbia Buried in Waste</title>
     
     <!-- Mapbox GL JS -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
     
     <!-- Scrollama JS za scrollytelling -->
     <script src="https://unpkg.com/scrollama"></script>
@@ -16,308 +16,314 @@
 </head>
 <body>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <div class="hero-overlay">
-            <h1>Serbia Buried in Waste: The Cost of Laws Left Unenforced</h1>
-            <h2>Pollution released into the air, soil and water gradually enters the food chain.</h2>
-            <p class="author">By Petar Paunović</p>
-            <p class="intro-text">
-                Only one in fifteen municipal dumpsites meets the legal standard for waste disposal. Less than 10 per cent of Serbia's household waste ends up at properly managed sanitary landfills. The rest is dumped at sites that pose a risk to surrounding land and groundwater. Serbia's waste is poorly managed not because the country lacks environmental laws, but because it repeatedly fails to enforce them.
-            </p>
-        </div>
-    </header>
+    <div class="content-wrapper">
 
-    <!-- SCROLLYTELLING MAIN CONTAINER -->
-    <main id="scrolly">
-        <!-- MAPA KOJA JE FIXED NA DESNOJ STRANI -->
-        <div id="map"></div>
-
-        <!-- TEKST KOJI SE SKROLUJE NA LEVOJ STRANI -->
-        <article>
-
-            <!-- STEP 1 -->
-            <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="sanitary_landfill">
-                <h3 class="sub-sanitary">Twelve Sanitary Landfills. On Paper.</h3>
-                <p>Serbia operates just twelve sanitary landfills, handling less than 10 per cent of the country's total waste. Under the Law on Waste Management, these facilities are required to meet strict technical and environmental standards. They must include wastewater treatment systems, landfill gas collection, continuous monitoring and other safeguards designed to minimise environmental harm. That is the legal requirement. The reality on the ground is a different story entirely.</p>
-                
-                <div class="graphic">
-                    <iframe title="Annual Waste Volumes at Sanitary Landfills" aria-label="Small multiple column chart" id="datawrapper-chart-97nVn" src="https://datawrapper.dwcdn.net/97nVn/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="713" data-external="1"></iframe>
-                </div>
-            </section>
-
-            <!-- STEP 2 -->
-            <section class="step" data-lat="43.871835" data-lng="19.885259" data-zoom="9" data-pitch="45" data-layers="sanitary_landfill">
-                <h3 class="sub-sanitary">When a Sanitary Landfill Catches Fire</h3>
-                <p>For more than 100 days, residents of Užice blocked access to the Duboko Regional Waste Management Centre, demanding its immediate closure. The protests followed a series of fires at a landfill that, by design, should have been protected against exactly that kind of failure. In May 2024, one of the fires burned for 20 consecutive days, eventually forcing Environment Minister Irena Vujović to visit the site.</p>
-                
-                <!-- GALERIJA 1 -->
-                <div class="gallery" id="gallery-1">
-                    <div class="gallery-slides">
-                        <img src="media/POZAR_DEPONIJA_DUBOKO_1.jpg" class="active" alt="Požar deponija Duboko 1">
-                        <img src="media/POZAR_DEPONIJA_DUBOKO_2.jpg" alt="Požar deponija Duboko 2">
-                    </div>
-                    <button class="prev" onclick="moveSlide('gallery-1', -1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide('gallery-1', 1)">&#10095;</button>
-                    <span class="source-tag">photo: Ministartsvo unutrašnjih poslova</span>
-                </div>
-
-                <p>Duboko was built to solve the waste problem of nine municipalities with a combined population of around 300,000. Instead, it became an environmental hazard. The fire disabled the landfill's leachate treatment system, allowing untreated leachate to reach the surrounding soil. Speaking to Serbia's public broadcaster RTS on 28 May 2024, Vujović described the fire as a case of force majeure and announced a €30 million investment package for the reconstruction and modernisation of Duboko.</p>
-
-                <!-- GALERIJA 2 -->
-                <div class="gallery" id="gallery-2">
-                    <div class="gallery-slides">
-                        <img src="media/POZAR_DEPONIJA_DUBOKO_3.jpg" class="active" alt="Požar deponija Duboko 3">
-                        <img src="media/POZAR_DEPONIJA_DUBOKO_4.jpg" alt="Požar deponija Duboko 4">
-                    </div>
-                    <button class="prev" onclick="moveSlide('gallery-2', -1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide('gallery-2', 1)">&#10095;</button>
-                    <span class="source-tag">photo: Ministartsvo unutrašnjih poslova</span>
-                </div>
-            </section>
-
-            <!-- STEP 3 -->
-            <section class="step" data-lat="43.863718" data-lng="19.863630" data-zoom="13" data-pitch="0" data-layers="sanitary_landfill,dep_duboko">
-                <p>Less than a year later, Serbia had a new environment minister. Sara Pavkov inaugurated a wastewater treatment plant at Duboko, while the landfill's reconstruction was not mentioned during the visit. In July 2026, the European Bank for Reconstruction and Development (EBRD) launched an international two-stage tender for the remediation, reclamation, closure and stabilisation of the exhausted landfill.</p>
-            </section>
-
-            <!-- STEP 4 -->
-            <section class="step" data-lat="44.778866" data-lng="20.588295" data-zoom="9" data-pitch="45" data-layers="sanitary_landfill">
-                <h3 class="sub-sanitary">The Capital Waited Until 2021</h3>
-                <p>For decades, smoke rising from landfill fires was a familiar sight above Belgrade, offering perhaps the clearest illustration of how long Serbia delayed modernising its waste management system.</p>
-            </section>
-
-            <!-- FULLSCREEN GIF 1 -->
-            <div class="full-media-block">
-                <img src="media/DEPONIJA_VINCA_GORI.gif" alt="Deponija Vinča Gori">
-                <span class="source-tag white-tag">video: Tanjug</span>
+        <!-- 1. HERO FOTOGRAFIJA SA NASLOVOM I PODNASLOVOM OVERLAY -->
+        <header class="hero-container">
+            <img src="media/POZAR_DEPONIJA_DUBOKO_1.jpg" alt="Deponija u plamenu" class="hero-image">
+            <div class="hero-overlay">
+                <h1 class="hero-title">Serbia Buried in Waste: The Cost of Laws Left Unenforced</h1>
+                <h2 class="hero-subtitle">Pollution released into the air, soil and water gradually enters the food chain.</h2>
             </div>
+        </header>
 
-            <!-- STEP 5 -->
-            <section class="step" data-lat="44.778866" data-lng="20.588295" data-zoom="13" data-pitch="0" data-layers="sanitary_landfill,dep_vinca">
-                <p>Today, Belgrade's only sanitary landfill receives around 1,500 tonnes of waste every day. It is also the largest in Serbia. Yet the capital has had a landfill built to modern environmental standards only since 2021, when a new 24-hectare disposal cell with an impermeable liner was put into operation.</p>
-                <p>For the previous 44 years, from 1977 to 2021, waste at Vinča was simply deposited layer by layer across some 65 hectares. Without a landfill gas collection system, fires were frequent, contributing to air pollution across much of Belgrade. The site also lacked a leachate collection system, allowing contaminated liquids to seep into the ground only a short distance from the Danube, Serbia's largest river and one of Europe's longest.</p>
-            </section>
-
-            <!-- STEP 6 -->
-            <section class="step" data-lat="43.99035" data-lng="20.42673" data-zoom="12" data-pitch="45" data-layers="sanitary_landfill">
-                <p>Vinča is far from unique. Most of Serbia's sanitary landfills have been built only since 2010. One of the few earlier examples is the regional landfill near Gornji Milanovac, whose development began in 2006 with a €2.3 million grant from the Norwegian government. The site was expanded in 2016 and entered another phase of reconstruction and capacity expansion in late 2025 after local authorities warned that growing tourism and new development were putting increasing pressure on its capacity.</p>
-            </section>
-
-            <!-- STEP 7 -->
-            <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="nonsanitary_active">
-                <h3 class="sub-nonsanitary">Marked for Closure. Still in Use.</h3>
-                <p>Sanitary landfills were designed primarily as regional facilities, receiving waste from multiple municipalities. But there are too few of them, and their capacity is insufficient. As a result, most municipalities in Serbia still dispose of waste at non-sanitary landfills.</p>
-                <p>There are 154 such sites across the country, designated by local authorities and receiving around 2.3 million tonnes of waste every year. Under Serbia's Waste Management Law, these landfills are classified as sites that must be remediated and closed because they do not meet the legal standards for waste disposal. Yet, according to official data from 2024, only 26 had stopped receiving waste.</p>
-                
-                <div class="graphic">
-                    <iframe title="Non-Sanitary Landfills: Evolution of Remediation Projects" aria-label="Line chart" id="datawrapper-chart-fGtZM" src="https://datawrapper.dwcdn.net/fGtZM/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="401" data-external="1"></iframe>
-                </div>
-
-                <p>Closing a landfill requires more than a legal requirement. Municipalities must first prepare remediation, closure and reclamation projects. The Waste Management Law has required them to do so since it was originally adopted (2009, 2010, 2016, 2018, 2023), with each amendment strengthening that requirement.</p>
-                <p>By the time the latest amendments entered into force in 2025, such projects had been prepared for 93 of the country's 154 non-sanitary landfills. Yet for many of those sites, the projects have remained on paper, while waste continues to be disposed of.</p>
-            </section>
-
-            <!-- STEP 8 -->
-            <section class="step" data-lat="43.2884718" data-lng="21.8854718" data-zoom="10" data-pitch="45" data-layers="nonsanitary_active">
-                <h3 class="sub-nonsanitary">A Decade Waiting for a Solution</h3>
-                <p>Every year, more than 100,000 tonnes of waste are disposed of at the Bubanj landfill in Niš, making it Serbia's third-largest non-sanitary landfill. The site has been in use since 1968. In early 2026, the municipal waste company launched yet another procurement to expand the landfill with a new disposal cell, seeking additional capacity rather than replacing it.</p>
-            </section>
-
-            <!-- STEP 9 -->
-            <section class="step" data-lat="43.2884718" data-lng="21.8854718" data-zoom="10" data-pitch="45" data-layers="nonsanitary_active,dep_bubanj_nis">
-                <p>Residents' group Niš, moj grad argues that expanding Bubanj is not a solution, but another delay to one that has been promised for years. "The citizens of Niš deserve a modern waste management system, not further investment in a landfill that has long been a symbol of neglect and failed waste management policy."</p>
-
-                <!-- GALERIJA 3 -->
-                <div class="gallery" id="gallery-3">
-                    <div class="gallery-slides">
-                        <img src="media/NIS_BUBANJ_1.jpg" class="active" alt="Niš Bubanj 1">
-                        <img src="media/NIS_BUBANJ_2.jpg" alt="Niš Bubanj 2">
-                    </div>
-                    <button class="prev" onclick="moveSlide('gallery-3', -1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide('gallery-3', 1)">&#10095;</button>
-                    <span class="source-tag">photo: JKP Mediana</span>
-                </div>
-
-                <p>The regional landfill has been the subject of repeated political promises, including a pledge by the country's president, yet the paperwork behind the project is now more than a decade old.</p>
-                <p>Construction of the Keleš regional landfill, intended to serve Niš and seven surrounding municipalities, was scheduled to begin in 2013. It was expected to become operational in 2015. Instead, that year saw only the first public procurement for the project. Another tender followed in 2016, then another in 2020, all without success. The landfill appeared once again in the City of Niš's Economic Development Programme in 2022, but waste continues to be disposed of at Bubanj, which the residents' group Niš, moj grad describes as the city's number one environmental problem. A problem for the nearly 250,000 people who live in Serbia's third-largest city.</p>
-            </section>
-
-            <!-- STEP 10 -->
-            <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="nonsanitary_disposal_methods">
-                <h3 class="sub-nonsanitary">One in Fifteen Follows the Law</h3>
-                <p>Although these landfills are intended to be phased out, the way waste is currently disposed of at most of them remains far below the standards required by law.</p>
-
-                <div class="graphic">
-                    <iframe title="Non-Sanitary Landfills: Disposal Methods" aria-label="Donut Chart" id="datawrapper-chart-o37Pp" src="https://datawrapper.dwcdn.net/o37Pp/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="530" data-external="1"></iframe>
-                </div>
-
-                <p>Under Serbia's Waste Management Law, the only fully compliant method of municipal waste disposal is by placing waste in engineered disposal cells. Yet this method is used at only one in every fifteen non-sanitary landfills. At nearly 40% of sites, waste is simply dumped without any treatment.</p>
-
-                <div class="graphic">
-                    <iframe title="Non-Sanitary Landfills: Evolution of Disposal Practices" aria-label="Stacked Bars" id="datawrapper-chart-pWwMo" src="https://datawrapper.dwcdn.net/pWwMo/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="307" data-external="1"></iframe>
-                </div>
-
-                <p>The data suggest that waste is no longer as frequently dumped without any treatment as it was seven years ago. Yet the transition has largely been towards semi-controlled practices rather than the fully compliant disposal method required by law.</p>
-            </section>
-
-            <!-- STEP 11 -->
-            <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="nonsanitary_environmental_hazards">
-                <h3 class="sub-nonsanitary">Only One Protects the Water</h3>
-                <p>Twenty-six municipalities in Serbia no longer operate non-sanitary landfills. Twenty-four of them have signed agreements to dispose of their waste at landfills in neighbouring municipalities. Elsewhere, however, environmental risks remain widespread. According to the Serbian Environmental Protection Agency, 30 non-sanitary landfills are located in flood-prone areas, increasing the risk of pollution during periods of high water.</p>
-
-                <div class="graphic">
-                    <iframe title="Non-Sanitary Landfills: Environmental Hazards" aria-label="Small multiple donut chart" id="datawrapper-chart-gx8ra" src="https://datawrapper.dwcdn.net/gx8ra/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="238" data-external="1"></iframe>
-                </div>
-
-                <p>Floods are not the only threat to nearby rivers. Even under normal conditions, leachate from decomposing waste can seep into the soil and contaminate groundwater. Only one non-sanitary landfill has had a leachate treatment system since it began operating, while nearly 80% lack even a collection system. Fires, another recurring problem at Serbian landfills, are often linked to the absence of landfill gas extraction systems. Fewer than one in six non-sanitary landfills is equipped with one.</p>
-            </section>
-
-            <!-- STEP 12 -->
-            <section class="step" data-lat="44.034167" data-lng="20.931949" data-zoom="10" data-pitch="45" data-layers="nonsanitary_environmental_hazards">
-                <h3 class="sub-nonsanitary">Waiting Until 2034</h3>
-                <p>Among them is the Jovanovac landfill near Kragujevac, Serbia's second-largest non-sanitary landfill. Every year, 226,839 tonnes of waste are disposed of there. Yet despite its size, Jovanovac lacks all three key environmental protection systems: leachate collection, leachate treatment and landfill gas extraction.</p>
-            </section>
-
-            <!-- STEP 13 -->
-            <section class="step" data-lat="44.034167" data-lng="20.931949" data-zoom="12" data-pitch="0" data-layers="nonsanitary_environmental_hazards,dep_jovanovac_kragujevac">
-                <!-- GALERIJA 4 -->
-                <div class="gallery" id="gallery-4">
-                    <div class="gallery-slides">
-                        <img src="media/KRAGUJEVAC_DEPONIJA_2.jpg" class="active" alt="Kragujevac Deponija 2">
-                        <img src="media/KRAGUJEVAC_DEPONIJA_3.jpg" alt="Kragujevac Deponija 3">
-                        <img src="media/KRAGUJEVAC_DEPONIJA_4.jpg" alt="Kragujevac Deponija 4">
-                    </div>
-                    <button class="prev" onclick="moveSlide('gallery-4', -1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide('gallery-4', 1)">&#10095;</button>
-                    <span class="source-tag">photo: JKP Šumadija</span>
-                </div>
-
-                <p>A remediation project for Jovanovac was adopted in 2019. Seven years later, local authorities are still purchasing additional land to extend the landfill's lifespan. They have also purchased a drone to support round-the-clock monitoring of the site and help prevent fires. Kragujevac, Serbia's fourth-largest city with around 180,000 residents, could get a modern waste management centre by 2034, under its latest Waste Management Plan.</p>
-                <p>While Kragujevac may have to wait nearly another decade, Serbia's second-largest city could soon stop using its non-sanitary landfill, provided everything goes according to plan.</p>
-            </section>
-
-            <!-- STEP 14 -->
-            <section class="step" data-lat="45.311" data-lng="19.842295" data-zoom="12" data-pitch="45" data-layers="nonsanitary_environmental_hazards">
-                <p>Until then, Novi Sad's municipal landfill will continue to hold the unwanted title of Serbia's largest non-sanitary landfill. Every year, it receives 366,901 tonnes of waste, yet it collects and treats not a single drop of leachate.</p>
-                <p>The process has already moved beyond the planning stage. In March 2026, a consortium of Greek and Serbian companies was awarded an €81.4 million contract to build a Regional Waste Management Centre. The project paves the way for the existing landfill to be remediated and closed.</p>
-            </section>
-
-            <!-- STEP 15 (MAP 16) -->
-            <section class="step" data-lat="45.248985" data-lng="19.487677" data-zoom="12" data-pitch="45" data-layers="nonsanitary_safety">
-                <h3 class="sub-nonsanitary">Waiting for Others to Solve It</h3>
-                <p>Once the Center in Novi Sad is completed, it is expected to serve several neighboring municipalities, including Bačka Palanka. Until then, those communities remain dependent on landfills that not only pose serious environmental risks but often lack even the most basic safety measures.</p>
-                <p>Addressing these problems is not optional. Serbian law requires every non-sanitary landfill to have an Adjustment Plan, setting out the measures and deadlines needed either to close the site or upgrade it into a sanitary landfill, the only form of waste disposal recognised by law. How far many municipalities still are from meeting even these basic obligations is perhaps most evident in landfill safety.</p>
-
-                <div class="graphic">
-                    <iframe title="Non-Sanitary Landfills: Safety" aria-label="Small multiple donut chart" id="datawrapper-chart-QjlA6" src="https://datawrapper.dwcdn.net/QjlA6/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="238" data-external="1"></iframe>
-                </div>
-
-                <p>Regulations require landfills to be enclosed by a fence at least two metres high to prevent uncontrolled access by people and animals. Yet over a third of non-sanitary landfills have no fencing, gates, security or any other form of access control.</p>
-            </section>
-
-            <!-- STEP 16 (MAP 17) -->
-            <section class="step" data-lat="45.248985" data-lng="19.487677" data-zoom="12" data-pitch="0" data-layers="nonsanitary_safety,dep_bpalanka">
-                <p>Bačka Palanka's municipal landfill, Serbia's fifth-largest non-sanitary site, receives 83,500 tonnes of waste each year. Despite having security personnel, it has no perimeter fence, while leachate continues to flow untreated. Fire prevention tells a similar story. Official records indicate that the landfill has a landfill gas extraction system. Yet fires continue to break out.</p>
-            </section>
-
-            <!-- FULLSCREEN GIF 2 -->
-            <div class="full-media-block">
-                <img src="media/DEPONIJA_B_PALANKA_GORI.gif" alt="Deponija Bačka Palanka Gori">
-                <span class="source-tag white-tag">video: BAP Vesti</span>
+        <!-- 2. DATUM, AUTOR I UVODNI TEKST (ISPOD SLIKE NA BELOJ POZADINI) -->
+        <section class="article-header">
+            <div class="meta-info">
+                <span class="date">22. jul 2026.</span> &bull; <span class="author">By Petar Paunović</span>
             </div>
+            <div class="intro-text">
+                <p>Only one in fifteen municipal dumpsites meets the legal standard for waste disposal. Less than 10 per cent of Serbia's household waste ends up at properly managed sanitary landfills. The rest is dumped at sites that pose a risk to surrounding land and groundwater. Serbia's waste is poorly managed not because the country lacks environmental laws, but because it repeatedly fails to enforce them.</p>
+            </div>
+        </section>
 
-            <!-- STEP 17 -->
-            <section class="step" data-lat="45.248985" data-lng="19.487677" data-zoom="12" data-pitch="0" data-layers="nonsanitary_safety,dep_bpalanka">
-                <p>In May 2026, the Provincial Government of Vojvodina allocated around €377,000 to remediate another landfill fire. Every euro spent dealing with the consequences is a euro that cannot be invested in permanent solutions, such as the regional waste management system that Bačka Palanka is expected to join.</p>
-                <h3 class="sub-nonsanitary">Long-Term Plans. Lasting Illness</h3>
-                <p>While data from Serbia's Environmental Protection Agency illustrate the environmental risks posed by non-sanitary landfills, medical experts warn that the consequences extend far beyond the surrounding environment. Pollutants released during landfill fires are inhaled as fine particulate matter, while contaminants that settle on nearby farmland can also enter the food chain.</p>
-                <p>"The consequences of landfill fires are long-lasting because they involve chemicals that affect the central nervous system, kidneys and liver. The effects are unlikely to appear immediately, but long-term exposure can lead to disease," says doctor Branislava Matić Savićević.</p>
-                <p>In her view, this delayed impact makes it difficult to convince local authorities that illnesses appearing years later may be linked to landfill fires. Public officials may choose whether to heed medical warnings. Compliance with the law should not be optional.</p>
-                <h3 class="sub-nonsanitary">Millions for the Consequences. Pennies for Those Responsible</h3>
-                <p>Had Serbia's Waste Management Law been enforced, this investigation would not have been necessary. Yet local officials and landfill operators who fail to comply with its provisions face fines of just €215-425.</p>
-                <p>For comparison, Serbian law prescribes the same maximum fine for citizens who dump rubbish outside designated bins, walk a dog without a lead or play excessively loud music.</p>
-            </section>
+        <!-- 3. SCROLLYTELLING GLAVNI KONTEJNER -->
+        <main id="scrolly">
+            
+            <!-- MAPA - LEVA STRANA -->
+            <div id="map"></div>
 
-            <!-- STEP 18 (MAP 18) -->
-            <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="wild_municipality">
-                <h3 class="sub-wild">Wild Dumpsites as Large as a City</h3>
-                <p>The responsibility does not rest solely with public institutions and municipal utility companies. Wild dumping by citizens has created another layer of Serbia's waste problem, with more than 8.3 million tonnes of waste discarded outside the official waste management system.</p>
-                <p>The true number of wild dumpsites is impossible to determine. They appear, disappear and often re-emerge at the same locations. Serbia's Environmental Protection Agency has recorded more than 8,000 unique geolocations over the years, but these do not necessarily represent the same number of wild dumpsites.</p>
+            <!-- TEKST I KORACI - DESNA STRANA -->
+            <article>
 
-                <div class="graphic">
-                    <iframe title="Wild Dumpsites: Volume and Surface Area" aria-label="Scatter Plot" id="datawrapper-chart-9yMrS" src="https://datawrapper.dwcdn.net/9yMrS/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="341" data-external="1"></iframe>
-                </div>
-
-                <p>To produce the closest possible estimate, every recorded site within a 20-metre radius was treated as a single location. This removed duplicate records accumulated over multiple years and allowed the data to be aggregated at municipal level. The result should therefore be viewed as a conservative estimate rather than a complete picture of wild dumping in Serbia.</p>
-            </section>
-
-            <!-- STEP 19 (MAP 19) -->
-            <section class="step" data-lat="43.995825" data-lng="21.238697" data-zoom="10" data-pitch="45" data-layers="wild_municipality,sanitary_landfills">
-                <h3 class="sub-wild">First for Wild Dumpsites Despite a Sanitary Landfill</h3>
-                <p>Taken together, these wild dumpsites occupy an area roughly equal to the entire municipality of Jagodina, home to around 35,000 people. Yet Jagodina itself is served by the sanitary landfill Gigoš, which receives close to 100,000 tonnes of waste each year.</p>
-            </section>
-
-            <!-- STEP 20 (MAP 20) -->
-            <section class="step" data-lat="42.910716" data-lng="21.847735" data-zoom="10" data-pitch="45" data-layers="wild_municipality,sanitary_landfills">
-                <p>Leskovac has its own regional sanitary landfill, Željkovac, yet it still ranks first in Serbia by the number of wild dumpsites. Combined, they occupy an area equivalent to around 170 football pitches.</p>
-                <p>To put that into perspective, imagine walking from Stari ured to the Railway Station in Leskovac. Everything to your right, as far as Leskovačka gimnazija, and everything to your left, as far as Visoka poslovna škola, would be covered in waste.</p>
-            </section>
-
-            <!-- STEP 21 (MAP 21) -->
-            <section class="step" data-lat="42.9966128" data-lng="21.9517361" data-zoom="15" data-pitch="0" data-layers="wild_municipality,cyrcle_leskovac">
-                <p>Leskovac is not alone in southern Serbia. Just to the east, Vranje ranks fifth in the country by the number of wild dumpsites, despite being served by the Veteris sanitary landfill. Aleksinac, Belgrade's municipality of Palilula and Kraljevo also rank among the municipalities with the highest number of wild dumpsites.</p>
-            </section>
-
-            <!-- STEP 22 (MAP 22) -->
-            <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="wild_5">
-                <h3 class="sub-wild">Higher Than the Avala Tower</h3>
-                <p>The picture changes, when measured by the amount of waste rather than the number of sites. In Pančevo, the total area covered by wild dumpsites is comparable in size to Monaco. A single wild dumpsite there occupies an area equivalent to the city's largest and oldest public park.</p>
-
-                <div class="graphic">
-                    <iframe title="Wild Dumpsites: Top 5 Total Waste Volume" aria-label="Bar Chart" id="datawrapper-chart-ERn0Q" src="https://datawrapper.dwcdn.net/ERn0Q/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="205" data-external="1"></iframe>
-                </div>
-            </section>
-
-            <!-- STEP 23 (MAP 23) -->
-            <section class="step" data-lat="44.625747" data-lng="20.901946" data-zoom="10" data-pitch="45" data-layers="wild_5">
-                <p>One municipality stands out for a different reason. According to the official database, a single wild dumpsite near Smederevo contains almost two million tonnes of waste, roughly a quarter of the total volume recorded nationwide. If that estimate were accurate, the waste piled there would rise higher than the Avala TV Tower (204.7 metres), despite occupying an area of only about three football pitches.</p>
-                <p>Fortunately, the figure is wrong. Unfortunately, the dumpsite is not.</p>
-            </section>
-
-            <!-- STEP 24 (MAP 24) -->
-            <section class="step" data-lat="44.6183028" data-lng="20.9497364" data-zoom="14" data-pitch="0" data-layers="wild_5,dep_radinac">
-                <p>Satellite imagery confirms the existence of a wild dumpsite near the village of Radinac covering around 12 hectares. While substantial, a site of that size could not realistically contain two million tonnes of waste. Based on its measured surface area, the actual volume is likely to be closer to a quarter of the reported figure, suggesting that the 2017 record contains a significant error rather than an accurate estimate.</p>
-            </section>
-
-            <!-- STEP 25 (MAP 25) -->
-            <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="new_sanitary_landfill">
-                <h3 class="sub-wild">Waiting for 2030</h3>
-                <p>The data presented in this investigation reflect the situation in 2024. Since then, according to Environment Minister Sara Pavkov, progress has continued. Addressing parliament in July 2026, she said that 1,263 wild dumpsites had been removed over the previous five years.</p>
-                <p>Even so, the scale of the problem remains vast. According to Serbia's Ministry of the Interior, more than 2,100 landfill fires were recorded in 2024 alone. In 2025, that number rose to 2,217, equivalent to more than six landfill fires every day. Researchers studying the impact of landfill fires on air pollution have described them as one of Serbia's key sources of air pollution, arguing that the frequency of these fires demonstrates that the country's current waste management system continues to fail.</p>
-                <p>By 2030, every second kilogram of household waste in Serbia will be disposed of at sanitary landfills, Pavkov told parliament, while also promising the completion of eight regional waste management centres.</p>
-                <p>Among them is the Banjica regional landfill near Nova Varoš. Four municipalities signed an agreement to build the facility in 2005. More than twenty years later, one of those municipalities, Prijepolje, presented Pavkov with an award for her contribution to environmental protection as construction of the landfill finally began.</p>
-
-                <!-- GALERIJA 5 -->
-                <div class="gallery" id="gallery-5">
-                    <div class="gallery-slides">
-                        <img src="media/PAVKOV_PRIZNANJE_1.jpg" class="active" alt="Pavkov Priznanje 1">
-                        <img src="media/PAVKOV_PRIZNANJE_2.jpg" alt="Pavkov Priznanje 2">
+                <!-- STEP 1 -->
+                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="sanitary_landfill">
+                    <h3 class="sub-sanitary">Twelve Sanitary Landfills. On Paper.</h3>
+                    <p>Serbia operates just twelve sanitary landfills, handling less than 10 per cent of the country's total waste. Under the Law on Waste Management, these facilities are required to meet strict technical and environmental standards. They must include wastewater treatment systems, landfill gas collection, continuous monitoring and other safeguards designed to minimise environmental harm. That is the legal requirement. The reality on the ground is a different story entirely.</p>
+                    
+                    <div class="graphic">
+                        <iframe title="Annual Waste Volumes at Sanitary Landfills" aria-label="Small multiple column chart" id="datawrapper-chart-97nVn" src="https://datawrapper.dwcdn.net/97nVn/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="713" data-external="1"></iframe>
                     </div>
-                    <button class="prev" onclick="moveSlide('gallery-5', -1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide('gallery-5', 1)">&#10095;</button>
-                    <span class="source-tag">photo: Ministartvo zaštite životne sredine</span>
+                </section>
+
+                <!-- STEP 2 -->
+                <section class="step" data-lat="43.871835" data-lng="19.885259" data-zoom="9" data-pitch="45" data-layers="sanitary_landfill">
+                    <h3 class="sub-sanitary">When a Sanitary Landfill Catches Fire</h3>
+                    <p>For more than 100 days, residents of Užice blocked access to the Duboko Regional Waste Management Centre, demanding its immediate closure. The protests followed a series of fires at a landfill that, by design, should have been protected against exactly that kind of failure. In May 2024, one of the fires burned for 20 consecutive days, eventually forcing Environment Minister Irena Vujović to visit the site.</p>
+                    
+                    <!-- GALERIJA 1 -->
+                    <div class="gallery" id="gallery-1">
+                        <div class="gallery-slides">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_1.jpg" class="active" alt="Požar deponija Duboko 1">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_2.jpg" alt="Požar deponija Duboko 2">
+                        </div>
+                        <button class="prev" onclick="moveSlide('gallery-1', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('gallery-1', 1)">&#10095;</button>
+                        <span class="source-tag">photo: Ministarstvo unutrašnjih poslova</span>
+                    </div>
+
+                    <p>Duboko was built to solve the waste problem of nine municipalities with a combined population of around 300,000. Instead, it became an environmental hazard. The fire disabled the landfill's leachate treatment system, allowing untreated leachate to reach the surrounding soil. Speaking to Serbia's public broadcaster RTS on 28 May 2024, Vujović described the fire as a case of force majeure and announced a €30 million investment package for the reconstruction and modernisation of Duboko.</p>
+
+                    <!-- GALERIJA 2 -->
+                    <div class="gallery" id="gallery-2">
+                        <div class="gallery-slides">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_3.jpg" class="active" alt="Požar deponija Duboko 3">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_4.jpg" alt="Požar deponija Duboko 4">
+                        </div>
+                        <button class="prev" onclick="moveSlide('gallery-2', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('gallery-2', 1)">&#10095;</button>
+                        <span class="source-tag">photo: Ministarstvo unutrašnjih poslova</span>
+                    </div>
+                </section>
+
+                <!-- STEP 3 -->
+                <section class="step" data-lat="43.863718" data-lng="19.863630" data-zoom="13" data-pitch="0" data-layers="sanitary_landfill,dep_duboko">
+                    <p>Less than a year later, Serbia had a new environment minister. Sara Pavkov inaugurated a wastewater treatment plant at Duboko, while the landfill's reconstruction was not mentioned during the visit. In July 2026, the European Bank for Reconstruction and Development (EBRD) launched an international two-stage tender for the remediation, reclamation, closure and stabilisation of the exhausted landfill.</p>
+                </section>
+
+                <!-- STEP 4 -->
+                <section class="step" data-lat="44.778866" data-lng="20.588295" data-zoom="9" data-pitch="45" data-layers="sanitary_landfill">
+                    <h3 class="sub-sanitary">The Capital Waited Until 2021</h3>
+                    <p>For decades, smoke rising from landfill fires was a familiar sight above Belgrade, offering perhaps the clearest illustration of how long Serbia delayed modernising its waste management system.</p>
+                </section>
+
+                <!-- FULL-WIDTH GIF 1 -->
+                <div class="media-block">
+                    <img src="media/DEPONIJA_VINCA_GORI.gif" alt="Deponija Vinča Gori">
+                    <span class="source-tag">video: Tanjug</span>
                 </div>
 
-                <p>Accepting the award on 8 July 2026, Pavkov said the new landfill would treat waste in line with the highest European standards.</p>
-                <h3 class="sub-wild">From Kitchen Bin to Dining Table</h3>
-                <p>How far Serbia still is from those standards is reflected in the findings of Igor Jezdimirović, Chairman of the Board of the Association of Environmental Protection Engineers, whose research examined the impact of landfill fires on air pollution and public health. He argues that waste management in Serbia remains at an early stage.</p>
-                <p>"A large number of wild dumpsites, together with non-sanitary landfills that frequently catch fire, have a negative impact on public health by contaminating the environment, the air, the soil and water. Gradually, that pollution enters the food chain."</p>
-                <p>In short, as long as waste continues to be managed this way, what we throw into our kitchen bins will eventually find its way back onto our dining tables.</p>
-            </section>
+                <!-- STEP 5 -->
+                <section class="step" data-lat="44.778866" data-lng="20.588295" data-zoom="13" data-pitch="0" data-layers="sanitary_landfill,dep_vinca">
+                    <p>Today, Belgrade's only sanitary landfill receives around 1,500 tonnes of waste every day. It is also the largest in Serbia. Yet the capital has had a landfill built to modern environmental standards only since 2021, when a new 24-hectare disposal cell with an impermeable liner was put into operation.</p>
+                    <p>For the previous 44 years, from 1977 to 2021, waste at Vinča was simply deposited layer by layer across some 65 hectares. Without a landfill gas collection system, fires were frequent, contributing to air pollution across much of Belgrade. The site also lacked a leachate collection system, allowing contaminated liquids to seep into the ground only a short distance from the Danube, Serbia's largest river and one of Europe's longest.</p>
+                </section>
 
-        </article>
-    </main>
+                <!-- STEP 6 -->
+                <section class="step" data-lat="43.99035" data-lng="20.42673" data-zoom="12" data-pitch="45" data-layers="sanitary_landfill">
+                    <p>Vinča is far from unique. Most of Serbia's sanitary landfills have been built only since 2010. One of the few earlier examples is the regional landfill near Gornji Milanovac, whose development began in 2006 with a €2.3 million grant from the Norwegian government. The site was expanded in 2016 and entered another phase of reconstruction and capacity expansion in late 2025 after local authorities warned that growing tourism and new development were putting increasing pressure on its capacity.</p>
+                </section>
+
+                <!-- STEP 7 -->
+                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="nonsanitary_active">
+                    <h3 class="sub-nonsanitary">Marked for Closure. Still in Use.</h3>
+                    <p>Sanitary landfills were designed primarily as regional facilities, receiving waste from multiple municipalities. But there are too few of them, and their capacity is insufficient. As a result, most municipalities in Serbia still dispose of waste at non-sanitary landfills.</p>
+                    <p>There are 154 such sites across the country, designated by local authorities and receiving around 2.3 million tonnes of waste every year. Under Serbia's Waste Management Law, these landfills are classified as sites that must be remediated and closed because they do not meet the legal standards for waste disposal. Yet, according to official data from 2024, only 26 had stopped receiving waste.</p>
+                    
+                    <div class="graphic">
+                        <iframe title="Non-Sanitary Landfills: Evolution of Remediation Projects" aria-label="Line chart" id="datawrapper-chart-fGtZM" src="https://datawrapper.dwcdn.net/fGtZM/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="401" data-external="1"></iframe>
+                    </div>
+
+                    <p>Closing a landfill requires more than a legal requirement. Municipalities must first prepare remediation, closure and reclamation projects. The Waste Management Law has required them to do so since it was originally adopted (2009, 2010, 2016, 2018, 2023), with each amendment strengthening that requirement.</p>
+                    <p>By the time the latest amendments entered into force in 2025, such projects had been prepared for 93 of the country's 154 non-sanitary landfills. Yet for many of those sites, the projects have remained on paper, while waste continues to be disposed of.</p>
+                </section>
+
+                <!-- STEP 8 -->
+                <section class="step" data-lat="43.2884718" data-lng="21.8854718" data-zoom="10" data-pitch="45" data-layers="nonsanitary_active">
+                    <h3 class="sub-nonsanitary">A Decade Waiting for a Solution</h3>
+                    <p>Every year, more than 100,000 tonnes of waste are disposed of at the Bubanj landfill in Niš, making it Serbia's third-largest non-sanitary landfill. The site has been in use since 1968. In early 2026, the municipal waste company launched yet another procurement to expand the landfill with a new disposal cell, seeking additional capacity rather than replacing it.</p>
+                </section>
+
+                <!-- STEP 9 -->
+                <section class="step" data-lat="43.2884718" data-lng="21.8854718" data-zoom="10" data-pitch="45" data-layers="nonsanitary_active,dep_bubanj_nis">
+                    <p>Residents' group Niš, moj grad argues that expanding Bubanj is not a solution, but another delay to one that has been promised for years. "The citizens of Niš deserve a modern waste management system, not further investment in a landfill that has long been a symbol of neglect and failed waste management policy."</p>
+
+                    <!-- GALERIJA 3 -->
+                    <div class="gallery" id="gallery-3">
+                        <div class="gallery-slides">
+                            <img src="media/NIS_BUBANJ_1.jpg" class="active" alt="Niš Bubanj 1">
+                            <img src="media/NIS_BUBANJ_2.jpg" alt="Niš Bubanj 2">
+                        </div>
+                        <button class="prev" onclick="moveSlide('gallery-3', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('gallery-3', 1)">&#10095;</button>
+                        <span class="source-tag">photo: JKP Mediana</span>
+                    </div>
+
+                    <p>The regional landfill has been the subject of repeated political promises, including a pledge by the country's president, yet the paperwork behind the project is now more than a decade old.</p>
+                    <p>Construction of the Keleš regional landfill, intended to serve Niš and seven surrounding municipalities, was scheduled to begin in 2013. It was expected to become operational in 2015. Instead, that year saw only the first public procurement for the project. Another tender followed in 2016, then another in 2020, all without success. The landfill appeared once again in the City of Niš's Economic Development Programme in 2022, but waste continues to be disposed of at Bubanj, which the residents' group Niš, moj grad describes as the city's number one environmental problem. A problem for the nearly 250,000 people who live in Serbia's third-largest city.</p>
+                </section>
+
+                <!-- STEP 10 -->
+                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="nonsanitary_disposal_methods">
+                    <h3 class="sub-nonsanitary">One in Fifteen Follows the Law</h3>
+                    <p>Although these landfills are intended to be phased out, the way waste is currently disposed of at most of them remains far below the standards required by law.</p>
+
+                    <div class="graphic">
+                        <iframe title="Non-Sanitary Landfills: Disposal Methods" aria-label="Donut Chart" id="datawrapper-chart-o37Pp" src="https://datawrapper.dwcdn.net/o37Pp/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="530" data-external="1"></iframe>
+                    </div>
+
+                    <p>Under Serbia's Waste Management Law, the only fully compliant method of municipal waste disposal is by placing waste in engineered disposal cells. Yet this method is used at only one in every fifteen non-sanitary landfills. At nearly 40% of sites, waste is simply dumped without any treatment.</p>
+
+                    <div class="graphic">
+                        <iframe title="Non-Sanitary Landfills: Evolution of Disposal Practices" aria-label="Stacked Bars" id="datawrapper-chart-pWwMo" src="https://datawrapper.dwcdn.net/pWwMo/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="307" data-external="1"></iframe>
+                    </div>
+
+                    <p>The data suggest that waste is no longer as frequently dumped without any treatment as it was seven years ago. Yet the transition has largely been towards semi-controlled practices rather than the fully compliant disposal method required by law.</p>
+                </section>
+
+                <!-- STEP 11 -->
+                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="nonsanitary_environmental_hazards">
+                    <h3 class="sub-nonsanitary">Only One Protects the Water</h3>
+                    <p>Twenty-six municipalities in Serbia no longer operate non-sanitary landfills. Twenty-four of them have signed agreements to dispose of their waste at landfills in neighbouring municipalities. Elsewhere, however, environmental risks remain widespread. According to the Serbian Environmental Protection Agency, 30 non-sanitary landfills are located in flood-prone areas, increasing the risk of pollution during periods of high water.</p>
+
+                    <div class="graphic">
+                        <iframe title="Non-Sanitary Landfills: Environmental Hazards" aria-label="Small multiple donut chart" id="datawrapper-chart-gx8ra" src="https://datawrapper.dwcdn.net/gx8ra/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="238" data-external="1"></iframe>
+                    </div>
+
+                    <p>Floods are not the only threat to nearby rivers. Even under normal conditions, leachate from decomposing waste can seep into the soil and contaminate groundwater. Only one non-sanitary landfill has had a leachate treatment system since it began operating, while nearly 80% lack even a collection system. Fires, another recurring problem at Serbian landfills, are often linked to the absence of landfill gas extraction systems. Fewer than one in six non-sanitary landfills is equipped with one.</p>
+                </section>
+
+                <!-- STEP 12 -->
+                <section class="step" data-lat="44.034167" data-lng="20.931949" data-zoom="10" data-pitch="45" data-layers="nonsanitary_environmental_hazards">
+                    <h3 class="sub-nonsanitary">Waiting Until 2034</h3>
+                    <p>Among them is the Jovanovac landfill near Kragujevac, Serbia's second-largest non-sanitary landfill. Every year, 226,839 tonnes of waste are disposed of there. Yet despite its size, Jovanovac lacks all three key environmental protection systems: leachate collection, leachate treatment and landfill gas extraction.</p>
+                </section>
+
+                <!-- STEP 13 -->
+                <section class="step" data-lat="44.034167" data-lng="20.931949" data-zoom="12" data-pitch="0" data-layers="nonsanitary_environmental_hazards,dep_jovanovac_kragujevac">
+                    <!-- GALERIJA 4 -->
+                    <div class="gallery" id="gallery-4">
+                        <div class="gallery-slides">
+                            <img src="media/KRAGUJEVAC_DEPONIJA_2.jpg" class="active" alt="Kragujevac Deponija 2">
+                            <img src="media/KRAGUJEVAC_DEPONIJA_3.jpg" alt="Kragujevac Deponija 3">
+                            <img src="media/KRAGUJEVAC_DEPONIJA_4.jpg" alt="Kragujevac Deponija 4">
+                        </div>
+                        <button class="prev" onclick="moveSlide('gallery-4', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('gallery-4', 1)">&#10095;</button>
+                        <span class="source-tag">photo: JKP Šumadija</span>
+                    </div>
+
+                    <p>A remediation project for Jovanovac was adopted in 2019. Seven years later, local authorities are still purchasing additional land to extend the landfill's lifespan. They have also purchased a drone to support round-the-clock monitoring of the site and help prevent fires. Kragujevac, Serbia's fourth-largest city with around 180,000 residents, could get a modern waste management centre by 2034, under its latest Waste Management Plan.</p>
+                    <p>While Kragujevac may have to wait nearly another decade, Serbia's second-largest city could soon stop using its non-sanitary landfill, provided everything goes according to plan.</p>
+                </section>
+
+                <!-- STEP 14 -->
+                <section class="step" data-lat="45.311" data-lng="19.842295" data-zoom="12" data-pitch="45" data-layers="nonsanitary_environmental_hazards">
+                    <p>Until then, Novi Sad's municipal landfill will continue to hold the unwanted title of Serbia's largest non-sanitary landfill. Every year, it receives 366,901 tonnes of waste, yet it collects and treats not a single drop of leachate.</p>
+                    <p>The process has already moved beyond the planning stage. In March 2026, a consortium of Greek and Serbian companies was awarded an €81.4 million contract to build a Regional Waste Management Centre. The project paves the way for the existing landfill to be remediated and closed.</p>
+                </section>
+
+                <!-- STEP 15 -->
+                <section class="step" data-lat="45.248985" data-lng="19.487677" data-zoom="12" data-pitch="45" data-layers="nonsanitary_safety">
+                    <h3 class="sub-nonsanitary">Waiting for Others to Solve It</h3>
+                    <p>Once the Center in Novi Sad is completed, it is expected to serve several neighboring municipalities, including Bačka Palanka. Until then, those communities remain dependent on landfills that not only pose serious environmental risks but often lack even the most basic safety measures.</p>
+                    <p>Addressing these problems is not optional. Serbian law requires every non-sanitary landfill to have an Adjustment Plan, setting out the measures and deadlines needed either to close the site or upgrade it into a sanitary landfill, the only form of waste disposal recognised by law. How far many municipalities still are from meeting even these basic obligations is perhaps most evident in landfill safety.</p>
+
+                    <div class="graphic">
+                        <iframe title="Non-Sanitary Landfills: Safety" aria-label="Small multiple donut chart" id="datawrapper-chart-QjlA6" src="https://datawrapper.dwcdn.net/QjlA6/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="238" data-external="1"></iframe>
+                    </div>
+
+                    <p>Regulations require landfills to be enclosed by a fence at least two metres high to prevent uncontrolled access by people and animals. Yet over a third of non-sanitary landfills have no fencing, gates, security or any other form of access control.</p>
+                </section>
+
+                <!-- STEP 16 -->
+                <section class="step" data-lat="45.248985" data-lng="19.487677" data-zoom="12" data-pitch="0" data-layers="nonsanitary_safety,dep_bpalanka">
+                    <p>Bačka Palanka's municipal landfill, Serbia's fifth-largest non-sanitary site, receives 83,500 tonnes of waste each year. Despite having security personnel, it has no perimeter fence, while leachate continues to flow untreated. Fire prevention tells a similar story. Official records indicate that the landfill has a landfill gas extraction system. Yet fires continue to break out.</p>
+                </section>
+
+                <!-- FULL-WIDTH GIF 2 -->
+                <div class="media-block">
+                    <img src="media/DEPONIJA_B_PALANKA_GORI.gif" alt="Deponija Bačka Palanka Gori">
+                    <span class="source-tag">video: BAP Vesti</span>
+                </div>
+
+                <!-- STEP 17 -->
+                <section class="step" data-lat="45.248985" data-lng="19.487677" data-zoom="12" data-pitch="0" data-layers="nonsanitary_safety,dep_bpalanka">
+                    <p>In May 2026, the Provincial Government of Vojvodina allocated around €377,000 to remediate another landfill fire. Every euro spent dealing with the consequences is a euro that cannot be invested in permanent solutions, such as the regional waste management system that Bačka Palanka is expected to join.</p>
+                    <h3 class="sub-nonsanitary">Long-Term Plans. Lasting Illness</h3>
+                    <p>While data from Serbia's Environmental Protection Agency illustrate the environmental risks posed by non-sanitary landfills, medical experts warn that the consequences extend far beyond the surrounding environment. Pollutants released during landfill fires are inhaled as fine particulate matter, while contaminants that settle on nearby farmland can also enter the food chain.</p>
+                    <p>"The consequences of landfill fires are long-lasting because they involve chemicals that affect the central nervous system, kidneys and liver. The effects are unlikely to appear immediately, but long-term exposure can lead to disease," says doctor Branislava Matić Savićević.</p>
+                    <p>In her view, this delayed impact makes it difficult to convince local authorities that illnesses appearing years later may be linked to landfill fires. Public officials may choose whether to heed medical warnings. Compliance with the law should not be optional.</p>
+                    <h3 class="sub-nonsanitary">Millions for the Consequences. Pennies for Those Responsible</h3>
+                    <p>Had Serbia's Waste Management Law been enforced, this investigation would not have been necessary. Yet local officials and landfill operators who fail to comply with its provisions face fines of just €215-425.</p>
+                    <p>For comparison, Serbian law prescribes the same maximum fine for citizens who dump rubbish outside designated bins, walk a dog without a lead or play excessively loud music.</p>
+                </section>
+
+                <!-- STEP 18 -->
+                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="wild_municipality">
+                    <h3 class="sub-wild">Wild Dumpsites as Large as a City</h3>
+                    <p>The responsibility does not rest solely with public institutions and municipal utility companies. Wild dumping by citizens has created another layer of Serbia's waste problem, with more than 8.3 million tonnes of waste discarded outside the official waste management system.</p>
+                    <p>The true number of wild dumpsites is impossible to determine. They appear, disappear and often re-emerge at the same locations. Serbia's Environmental Protection Agency has recorded more than 8,000 unique geolocations over the years, but these do not necessarily represent the same number of wild dumpsites.</p>
+
+                    <div class="graphic">
+                        <iframe title="Wild Dumpsites: Volume and Surface Area" aria-label="Scatter Plot" id="datawrapper-chart-9yMrS" src="https://datawrapper.dwcdn.net/9yMrS/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="341" data-external="1"></iframe>
+                    </div>
+
+                    <p>To produce the closest possible estimate, every recorded site within a 20-metre radius was treated as a single location. This removed duplicate records accumulated over multiple years and allowed the data to be aggregated at municipal level. The result should therefore be viewed as a conservative estimate rather than a complete picture of wild dumping in Serbia.</p>
+                </section>
+
+                <!-- STEP 19 -->
+                <section class="step" data-lat="43.995825" data-lng="21.238697" data-zoom="10" data-pitch="45" data-layers="wild_municipality,sanitary_landfills">
+                    <h3 class="sub-wild">First for Wild Dumpsites Despite a Sanitary Landfill</h3>
+                    <p>Taken together, these wild dumpsites occupy an area roughly equal to the entire municipality of Jagodina, home to around 35,000 people. Yet Jagodina itself is served by the sanitary landfill Gigoš, which receives close to 100,000 tonnes of waste each year.</p>
+                </section>
+
+                <!-- STEP 20 -->
+                <section class="step" data-lat="42.910716" data-lng="21.847735" data-zoom="10" data-pitch="45" data-layers="wild_municipality,sanitary_landfills">
+                    <p>Leskovac has its own regional sanitary landfill, Željkovac, yet it still ranks first in Serbia by the number of wild dumpsites. Combined, they occupy an area equivalent to around 170 football pitches.</p>
+                    <p>To put that into perspective, imagine walking from Stari ured to the Railway Station in Leskovac. Everything to your right, as far as Leskovačka gimnazija, and everything to your left, as far as Visoka poslovna škola, would be covered in waste.</p>
+                </section>
+
+                <!-- STEP 21 -->
+                <section class="step" data-lat="42.9966128" data-lng="21.9517361" data-zoom="15" data-pitch="0" data-layers="wild_municipality,cyrcle_leskovac">
+                    <p>Leskovac is not alone in southern Serbia. Just to the east, Vranje ranks fifth in the country by the number of wild dumpsites, despite being served by the Veteris sanitary landfill. Aleksinac, Belgrade's municipality of Palilula and Kraljevo also rank among the municipalities with the highest number of wild dumpsites.</p>
+                </section>
+
+                <!-- STEP 22 -->
+                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="wild_5">
+                    <h3 class="sub-wild">Higher Than the Avala Tower</h3>
+                    <p>The picture changes, when measured by the amount of waste rather than the number of sites. In Pančevo, the total area covered by wild dumpsites is comparable in size to Monaco. A single wild dumpsite there occupies an area equivalent to the city's largest and oldest public park.</p>
+
+                    <div class="graphic">
+                        <iframe title="Wild Dumpsites: Top 5 Total Waste Volume" aria-label="Bar Chart" id="datawrapper-chart-ERn0Q" src="https://datawrapper.dwcdn.net/ERn0Q/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="205" data-external="1"></iframe>
+                    </div>
+                </section>
+
+                <!-- STEP 23 -->
+                <section class="step" data-lat="44.625747" data-lng="20.901946" data-zoom="10" data-pitch="45" data-layers="wild_5">
+                    <p>One municipality stands out for a different reason. According to the official database, a single wild dumpsite near Smederevo contains almost two million tonnes of waste, roughly a quarter of the total volume recorded nationwide. If that estimate were accurate, the waste piled there would rise higher than the Avala TV Tower (204.7 metres), despite occupying an area of only about three football pitches.</p>
+                    <p>Fortunately, the figure is wrong. Unfortunately, the dumpsite is not.</p>
+                </section>
+
+                <!-- STEP 24 -->
+                <section class="step" data-lat="44.6183028" data-lng="20.9497364" data-zoom="14" data-pitch="0" data-layers="wild_5,dep_radinac">
+                    <p>Satellite imagery confirms the existence of a wild dumpsite near the village of Radinac covering around 12 hectares. While substantial, a site of that size could not realistically contain two million tonnes of waste. Based on its measured surface area, the actual volume is likely to be closer to a quarter of the reported figure, suggesting that the 2017 record contains a significant error rather than an accurate estimate.</p>
+                </section>
+
+                <!-- STEP 25 -->
+                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="new_sanitary_landfill">
+                    <h3 class="sub-wild">Waiting for 2030</h3>
+                    <p>The data presented in this investigation reflect the situation in 2024. Since then, according to Environment Minister Sara Pavkov, progress has continued. Addressing parliament in July 2026, she said that 1,263 wild dumpsites had been removed over the previous five years.</p>
+                    <p>Even so, the scale of the problem remains vast. According to Serbia's Ministry of the Interior, more than 2,100 landfill fires were recorded in 2024 alone. In 2025, that number rose to 2,217, equivalent to more than six landfill fires every day. Researchers studying the impact of landfill fires on air pollution have described them as one of Serbia's key sources of air pollution, arguing that the frequency of these fires demonstrates that the country's current waste management system continues to fail.</p>
+                    <p>By 2030, every second kilogram of household waste in Serbia will be disposed of at sanitary landfills, Pavkov told parliament, while also promising the completion of eight regional waste management centres.</p>
+                    <p>Among them is the Banjica regional landfill near Nova Varoš. Four municipalities signed an agreement to build the facility in 2005. More than twenty years later, one of those municipalities, Prijepolje, presented Pavkov with an award for her contribution to environmental protection as construction of the landfill finally began.</p>
+
+                    <!-- GALERIJA 5 -->
+                    <div class="gallery" id="gallery-5">
+                        <div class="gallery-slides">
+                            <img src="media/PRIJEPOLJE_NAGRADA_1.jpg" class="active" alt="Nagrada Sara Pavkov 1">
+                            <img src="media/PRIJEPOLJE_NAGRADA_2.jpg" alt="Nagrada Sara Pavkov 2">
+                        </div>
+                        <button class="prev" onclick="moveSlide('gallery-5', -1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('gallery-5', 1)">&#10095;</button>
+                        <span class="source-tag">photo: Opština Prijepolje</span>
+                    </div>
+                </section>
+
+            </article>
+        </main>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
