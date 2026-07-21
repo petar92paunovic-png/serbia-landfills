@@ -1,103 +1,102 @@
-// Mapbox Access Token
-mapboxgl.accessToken = 'pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ0dTgzaTQwNzZuMnpzY3k4bHdsdzR3In0.2USgUYibSUrvj5LArK6E8A';
+// Initialize the Scrollama library for scrollytelling
+const scroller = scrollama();
 
-// Initialize Mapbox map instance
+// Initialize the Mapbox GL map with your credentials
+mapboxgl.accessToken = 'pk.eyJ1IjoicGV0YXJwYXVub3ZpYyIsImEiOiJjbTlib200dmMwYXltMmpxdHhyMWIydTlhIn0.J6bIsfCUpU5SgK1U-5A7KA';
+
 const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'https://api.mapbox.com/styles/v1/petar92/cmrifkhvq000w01s828d2ange.html?title=copy&access_token=pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ0dTgzaTQwNzZuMnpzY3k4bHdsdzR3In0.2USgUYibSUrvj5LArK6E8A&zoomwheel=true&fresh=true#5.4/44.062/22.124/0/60',
-    center: [20.9114, 44.0165],
-    zoom: 6,
-    pitch: 0
+    container: 'map', // HTML container ID
+    style: 'mapbox://styles/petarpaunovic/cm9g23qsk005h01rc3n0ce57q',
+    center: [20.9114, 44.0165], // Initial coordinates (Serbia)
+    zoom: 6, // Initial zoom level
+    pitch: 0 // Initial map pitch/tilt
 });
 
-// Array containing all vector/data layer IDs configured in Mapbox Studio
-const allLayers = [
-    'sanitary_landfill',
-    'dep_duboko',
-    'dep_vinca',
-    'nonsanitary_active',
-    'dep_bubanj_nis',
-    'nonsanitary_disposal_methods',
-    'nonsanitary_environmental_hazards',
-    'dep_jovanovac_kragujevac',
-    'nonsanitary_safety',
-    'dep_bpalanka',
-    'wild_municipality',
-    'sanitary_landfills',
-    'cyrcle_leskovac',
-    'wild_5',
-    'dep_radinac',
-    'new_sanitary_landfill'
-];
+// Function to handle map layer visibility
+function updateMapLayers(activeLayers) {
+    // List of all map layers used in the project
+    const allLayers = [
+        'sanitary_landfill',
+        'dep_duboko',
+        'dep_vinca',
+        'nonsanitary_active',
+        'dep_bubanj_nis',
+        'nonsanitary_disposal_methods',
+        'nonsanitary_environmental_hazards',
+        'dep_jovanovac_kragujevac',
+        'nonsanitary_safety',
+        'dep_bpalanka',
+        'wild_municipality',
+        'cyrcle_leskovac',
+        'wild_5',
+        'dep_radinac',
+        'new_sanitary_landfill'
+    ];
 
-// Helper function to toggle layer visibility safely based on active step requirements
-function showOnly(activeLayers) {
-    // Check if map style has finished loading to prevent undefined property errors
-    if (!map.isStyleLoaded()) return;
-
+    // Loop through all layers and toggle visibility based on active steps
     allLayers.forEach(layer => {
-        try {
-            if (map.getLayer(layer)) {
-                const visibility = activeLayers.includes(layer) ? 'visible' : 'none';
-                map.setLayoutProperty(layer, 'visibility', visibility);
+        if (map.getLayer(layer)) {
+            if (activeLayers.includes(layer)) {
+                map.setLayoutProperty(layer, 'visibility', 'visible');
+            } else {
+                map.setLayoutProperty(layer, 'visibility', 'none');
             }
-        } catch (err) {
-            // Log warning if layer is not ready yet instead of crashing execution
-            console.warn(`Layer ${layer} is not ready yet:`, err);
         }
     });
 }
 
+// Set up scroll logic and event listeners once the map loads
 map.on('load', () => {
-    // Initialize Scrollama for scrollytelling interaction
-    const scroller = scrollama();
-
+    
+    // Configure Scrollama
     scroller
         .setup({
-            step: '.step',
-            offset: 0.5,
-            debug: false
+            step: '.step', // HTML elements representing scroll steps
+            offset: 0.5,   // Trigger step when it reaches 50% of the viewport height
+            debug: false   // Set to true to display visual debug lines
         })
         .onStepEnter(response => {
+            // response.element refers to the currently active .step element
             const el = response.element;
-            
-            // Safely parse camera settings (fallback to defaults if missing)
+
+            // Extract coordinates and zoom attributes from HTML
             const lat = parseFloat(el.getAttribute('data-lat'));
             const lng = parseFloat(el.getAttribute('data-lng'));
-            const zoom = parseFloat(el.getAttribute('data-zoom')) || 6;
+            const zoom = parseFloat(el.getAttribute('data-zoom'));
             const pitch = parseFloat(el.getAttribute('data-pitch')) || 0;
-
-            // Safely parse data-layers to prevent script crashes if step has no layer attribute
             const layersAttr = el.getAttribute('data-layers');
-            const layers = layersAttr ? layersAttr.split(',').map(s => s.trim()) : [];
 
-            // Smoothly transition map camera only if coordinates exist for the step
+            // Smoothly fly to the target coordinates
             if (!isNaN(lat) && !isNaN(lng)) {
                 map.flyTo({
                     center: [lng, lat],
                     zoom: zoom,
                     pitch: pitch,
                     essential: true,
-                    duration: 2000
+                    duration: 2000 // Animation duration in milliseconds
                 });
             }
 
-            // Update visible layers for the active step
-            showOnly(layers);
+            // Update visible map layers for the current step
+            if (layersAttr) {
+                const activeLayers = layersAttr.split(',').map(s => s.trim());
+                updateMapLayers(activeLayers);
+            }
         });
 
-    // Recalculate Scrollama trigger points on window resize
+    // Resize Scrollama triggers when the window is resized
     window.addEventListener('resize', scroller.resize);
 });
 
-// Helper function for navigating inline image slider/galleries
+// Function to control image galleries (previous/next buttons)
 function moveSlide(galleryId, direction) {
     const gallery = document.getElementById(galleryId);
     if (!gallery) return;
-    
+
     const slides = gallery.querySelectorAll('.gallery-slides img');
     let activeIndex = -1;
 
+    // Find the currently active slide index
     slides.forEach((slide, index) => {
         if (slide.classList.contains('active')) {
             activeIndex = index;
@@ -105,11 +104,14 @@ function moveSlide(galleryId, direction) {
         }
     });
 
+    // Calculate the index for the next slide
     let newIndex = activeIndex + direction;
-    if (newIndex >= slides.length) newIndex = 0;
-    if (newIndex < 0) newIndex = slides.length - 1;
-
-    if (slides[newIndex]) {
-        slides[newIndex].classList.add('active');
+    if (newIndex >= slides.length) {
+        newIndex = 0; // Wrap around to the first image
+    } else if (newIndex < 0) {
+        newIndex = slides.length - 1; // Wrap around to the last image
     }
+
+    // Display the new active slide
+    slides[newIndex].classList.add('active');
 }
