@@ -9,7 +9,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
     
-    <!-- Scrollama JS za scrollytelling -->
+    <!-- Scrollama JS for scrollytelling -->
     <script src="https://unpkg.com/scrollama"></script>
     
     <link rel="stylesheet" href="style.css">
@@ -18,16 +18,16 @@
 
     <div class="content-wrapper">
 
-        <!-- 1. HERO FOTOGRAFIJA SA NASLOVOM I PODNASLOVOM OVERLAY -->
+        <!-- 1. HERO PHOTO WITH TITLE AND SUBTITLE OVERLAY -->
         <header class="hero-container">
-            <img src="media/POZAR_DEPONIJA_DUBOKO_1.jpg" alt="Deponija u plamenu" class="hero-image">
+            <img src="media/POZAR_DEPONIJA_DUBOKO_1.jpg" alt="Landfill on fire" class="hero-image">
             <div class="hero-overlay">
                 <h1 class="hero-title">Serbia Buried in Waste: The Cost of Laws Left Unenforced</h1>
                 <h2 class="hero-subtitle">Pollution released into the air, soil and water gradually enters the food chain.</h2>
             </div>
         </header>
 
-        <!-- 2. DATUM, AUTOR I UVODNI TEKST (ISPOD SLIKE NA BELOJ POZADINI) -->
+        <!-- 2. DATE, AUTHOR AND INTRODUCTORY TEXT -->
         <section class="article-header">
             <div class="meta-info">
                 <span class="date">22. jul 2026.</span> &bull; <span class="author">By Petar Paunović</span>
@@ -37,13 +37,13 @@
             </div>
         </section>
 
-        <!-- 3. SCROLLYTELLING GLAVNI KONTEJNER -->
+        <!-- 3. SCROLLYTELLING MAIN CONTAINER -->
         <main id="scrolly">
             
-            <!-- MAPA - LEVA STRANA -->
+            <!-- MAP - LEFT SIDE -->
             <div id="map"></div>
 
-            <!-- TEKST I KORACI - DESNA STRANA -->
+            <!-- TEXT AND STEPS - RIGHT SIDE -->
             <article>
 
                 <!-- STEP 1 -->
@@ -61,11 +61,11 @@
                     <h3 class="sub-sanitary">When a Sanitary Landfill Catches Fire</h3>
                     <p>For more than 100 days, residents of Užice blocked access to the Duboko Regional Waste Management Centre, demanding its immediate closure. The protests followed a series of fires at a landfill that, by design, should have been protected against exactly that kind of failure. In May 2024, one of the fires burned for 20 consecutive days, eventually forcing Environment Minister Irena Vujović to visit the site.</p>
                     
-                    <!-- GALERIJA 1 -->
+                    <!-- GALLERY 1 -->
                     <div class="gallery" id="gallery-1">
                         <div class="gallery-slides">
-                            <img src="media/POZAR_DEPONIJA_DUBOKO_1.jpg" class="active" alt="Požar deponija Duboko 1">
-                            <img src="media/POZAR_DEPONIJA_DUBOKO_2.jpg" alt="Požar deponija Duboko 2">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_1.jpg" class="active" alt="Fire at Duboko landfill 1">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_2.jpg" alt="Fire at Duboko landfill 2">
                         </div>
                         <button class="prev" onclick="moveSlide('gallery-1', -1)">&#10094;</button>
                         <button class="next" onclick="moveSlide('gallery-1', 1)">&#10095;</button>
@@ -74,11 +74,11 @@
 
                     <p>Duboko was built to solve the waste problem of nine municipalities with a combined population of around 300,000. Instead, it became an environmental hazard. The fire disabled the landfill's leachate treatment system, allowing untreated leachate to reach the surrounding soil. Speaking to Serbia's public broadcaster RTS on 28 May 2024, Vujović described the fire as a case of force majeure and announced a €30 million investment package for the reconstruction and modernisation of Duboko.</p>
 
-                    <!-- GALERIJA 2 -->
+                    <!-- GALLERY 2 -->
                     <div class="gallery" id="gallery-2">
                         <div class="gallery-slides">
-                            <img src="media/POZAR_DEPONIJA_DUBOKO_3.jpg" class="active" alt="Požar deponija Duboko 3">
-                            <img src="media/POZAR_DEPONIJA_DUBOKO_4.jpg" alt="Požar deponija Duboko 4">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_3.jpg" class="active" alt="Fire at Duboko landfill 3">
+                            <img src="media/POZAR_DEPONIJA_DUBOKO_4.jpg" alt="Fire at Duboko landfill 4">
                         </div>
                         <button class="prev" onclick="moveSlide('gallery-2', -1)">&#10094;</button>
                         <button class="next" onclick="moveSlide('gallery-2', 1)">&#10095;</button>
@@ -99,7 +99,7 @@
 
                 <!-- FULL-WIDTH GIF 1 -->
                 <div class="media-block">
-                    <img src="media/DEPONIJA_VINCA_GORI.gif" alt="Deponija Vinča Gori">
+                    <img src="media/DEPONIJA_VINCA_GORI.gif" alt="Vinča Landfill on Fire">
                     <span class="source-tag">video: Tanjug</span>
                 </div>
 
@@ -138,7 +138,7 @@
                 <section class="step" data-lat="43.2884718" data-lng="21.8854718" data-zoom="10" data-pitch="45" data-layers="nonsanitary_active,dep_bubanj_nis">
                     <p>Residents' group Niš, moj grad argues that expanding Bubanj is not a solution, but another delay to one that has been promised for years. "The citizens of Niš deserve a modern waste management system, not further investment in a landfill that has long been a symbol of neglect and failed waste management policy."</p>
 
-                    <!-- GALERIJA 3 -->
+                    <!-- GALLERY 3 -->
                     <div class="gallery" id="gallery-3">
                         <div class="gallery-slides">
                             <img src="media/NIS_BUBANJ_1.jpg" class="active" alt="Niš Bubanj 1">
@@ -191,12 +191,12 @@
 
                 <!-- STEP 13 -->
                 <section class="step" data-lat="44.034167" data-lng="20.931949" data-zoom="12" data-pitch="0" data-layers="nonsanitary_environmental_hazards,dep_jovanovac_kragujevac">
-                    <!-- GALERIJA 4 -->
+                    <!-- GALLERY 4 -->
                     <div class="gallery" id="gallery-4">
                         <div class="gallery-slides">
-                            <img src="media/KRAGUJEVAC_DEPONIJA_2.jpg" class="active" alt="Kragujevac Deponija 2">
-                            <img src="media/KRAGUJEVAC_DEPONIJA_3.jpg" alt="Kragujevac Deponija 3">
-                            <img src="media/KRAGUJEVAC_DEPONIJA_4.jpg" alt="Kragujevac Deponija 4">
+                            <img src="media/KRAGUJEVAC_DEPONIJA_2.jpg" class="active" alt="Kragujevac Landfill 2">
+                            <img src="media/KRAGUJEVAC_DEPONIJA_3.jpg" alt="Kragujevac Landfill 3">
+                            <img src="media/KRAGUJEVAC_DEPONIJA_4.jpg" alt="Kragujevac Landfill 4">
                         </div>
                         <button class="prev" onclick="moveSlide('gallery-4', -1)">&#10094;</button>
                         <button class="next" onclick="moveSlide('gallery-4', 1)">&#10095;</button>
@@ -233,7 +233,7 @@
 
                 <!-- FULL-WIDTH GIF 2 -->
                 <div class="media-block">
-                    <img src="media/DEPONIJA_B_PALANKA_GORI.gif" alt="Deponija Bačka Palanka Gori">
+                    <img src="media/DEPONIJA_B_PALANKA_GORI.gif" alt="Bačka Palanka Landfill on Fire">
                     <span class="source-tag">video: BAP Vesti</span>
                 </div>
 
@@ -300,31 +300,53 @@
                     <p>Satellite imagery confirms the existence of a wild dumpsite near the village of Radinac covering around 12 hectares. While substantial, a site of that size could not realistically contain two million tonnes of waste. Based on its measured surface area, the actual volume is likely to be closer to a quarter of the reported figure, suggesting that the 2017 record contains a significant error rather than an accurate estimate.</p>
                 </section>
 
-                <!-- STEP 25 -->
-                <section class="step" data-lat="44.0165" data-lng="20.9114" data-zoom="6" data-pitch="0" data-layers="new_sanitary_landfill">
+                <!-- STEP 25 (COMPLETE WITH GALLERY 5 & CONCLUSION) -->
+                <section class="step" data-lat="43.4565" data-lng="19.8214" data-zoom="8" data-pitch="0" data-layers="new_sanitary_landfill">
                     <h3 class="sub-wild">Waiting for 2030</h3>
                     <p>The data presented in this investigation reflect the situation in 2024. Since then, according to Environment Minister Sara Pavkov, progress has continued. Addressing parliament in July 2026, she said that 1,263 wild dumpsites had been removed over the previous five years.</p>
-                    <p>Even so, the scale of the problem remains vast. According to Serbia's Ministry of the Interior, more than 2,100 landfill fires were recorded in 2024 alone. In 2025, that number rose to 2,217, equivalent to more than six landfill fires every day. Researchers studying the impact of landfill fires on air pollution have described them as one of Serbia's key sources of air pollution, arguing that the frequency of these fires demonstrates that the country's current waste management system continues to fail.</p>
-                    <p>By 2030, every second kilogram of household waste in Serbia will be disposed of at sanitary landfills, Pavkov told parliament, while also promising the completion of eight regional waste management centres.</p>
                     <p>Among them is the Banjica regional landfill near Nova Varoš. Four municipalities signed an agreement to build the facility in 2005. More than twenty years later, one of those municipalities, Prijepolje, presented Pavkov with an award for her contribution to environmental protection as construction of the landfill finally began.</p>
 
-                    <!-- GALERIJA 5 -->
+                    <!-- GALLERY 5 -->
                     <div class="gallery" id="gallery-5">
                         <div class="gallery-slides">
-                            <img src="media/PRIJEPOLJE_NAGRADA_1.jpg" class="active" alt="Nagrada Sara Pavkov 1">
-                            <img src="media/PRIJEPOLJE_NAGRADA_2.jpg" alt="Nagrada Sara Pavkov 2">
+                            <img src="media/PAVKOV_PRIZNANJE_1.jpg" class="active" alt="Pavkov award presentation 1">
+                            <img src="media/PAVKOV_PRIZNANJE_2.jpg" alt="Pavkov award presentation 2">
                         </div>
                         <button class="prev" onclick="moveSlide('gallery-5', -1)">&#10094;</button>
                         <button class="next" onclick="moveSlide('gallery-5', 1)">&#10095;</button>
-                        <span class="source-tag">photo: Opština Prijepolje</span>
+                        <span class="source-tag">photo: Ministarstvo zaštite životne sredine</span>
                     </div>
+
+                    <p>Accepting the award on 8 July 2026, Pavkov said the new landfill would treat waste in line with the highest European standards.</p>
+
+                    <h3>From Kitchen Bin to Dining Table</h3>
+                    <p>How far Serbia still is from those standards is reflected in the findings of Igor Jezdimirović, Chairman of the Board of the Association of Environmental Protection Engineers, whose research examined the impact of landfill fires on air pollution and public health. He argues that waste management in Serbia remains at an early stage.</p>
+                    <p>"A large number of wild dumpsites, together with non-sanitary landfills that frequently catch fire, have a negative impact on public health by contaminating the environment, the air, the soil and water. Gradually, that pollution enters the food chain."</p>
+                    <p>In short, as long as waste continues to be managed this way, what we throw into our kitchen bins will eventually find its way back onto our dining tables.</p>
                 </section>
 
             </article>
         </main>
-
     </div>
 
-    <script src="script.js"></script>
+    <!-- SCRIPT 1: IMAGE GALLERIES (Slide navigation) -->
+    <script>
+        function moveSlide(galleryId, direction) {
+            const gallery = document.getElementById(galleryId);
+            if (!gallery) return;
+            const slides = gallery.querySelectorAll('.gallery-slides img');
+            let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            
+            slides[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex + direction + slides.length) % slides.length;
+            slides[activeIndex].classList.add('active');
+        }
+    </script>
+
+    <!-- SCRIPT 2: DATAWRAPPER RESPONSIVE EMBED FIX -->
+    <script type="text/javascript">
+        !function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+    </script>
+
 </body>
 </html>
