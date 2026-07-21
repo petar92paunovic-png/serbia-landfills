@@ -121,6 +121,7 @@ article {
     z-index: 1;
     border-radius: 8px;
     overflow: hidden;
+    pointer-events: none;
 }
 
 /* ==========================================
