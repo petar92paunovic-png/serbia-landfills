@@ -1,15 +1,14 @@
-// Initialize the Scrollama library for scrollytelling
 const scroller = scrollama();
 
-// Initialize the Mapbox GL map with your credentials
-mapboxgl.accessToken = 'pk.eyJ1IjoicGV0YXJwYXVub3ZpYyIsImEiOiJjbTlib200dmMwYXltMmpxdHhyMWIydTlhIn0.J6bIsfCUpU5SgK1U-5A7KA';
+mapboxgl.accessToken =
+  'pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ0dTgzaTQwNzZuMnpzY3k4bHdsdzR3In0.2USgUYibSUrvj5LArK6E8A';
 
 const map = new mapboxgl.Map({
-    container: 'map', // HTML container ID
-    style: 'mapbox://styles/petarpaunovic/cm9g23qsk005h01rc3n0ce57q',
-    center: [20.9114, 44.0165], // Initial coordinates (Serbia)
-    zoom: 6, // Initial zoom level
-    pitch: 0 // Initial map pitch/tilt
+    container: 'map',
+    style: 'mapbox://styles/petar92/cmrifkhvq000w01s828d2ange',
+    center: [20.9114, 44.0165],
+    zoom: 6,
+    pitch: 0
 });
 
 // Function to handle map layer visibility
