@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ0dTgzaTQwNzZuMnpzY3k4b
 // Initialize Mapbox map instance
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/petar92/cmrifkhvq000w01s828d2ange',
+    style: 'https://api.mapbox.com/styles/v1/petar92/cmrifkhvq000w01s828d2ange.html?title=copy&access_token=pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ0dTgzaTQwNzZuMnpzY3k4bHdsdzR3In0.2USgUYibSUrvj5LArK6E8A&zoomwheel=true&fresh=true#5.4/44.062/22.124/0/60',
     center: [20.9114, 44.0165],
     zoom: 6,
     pitch: 0
