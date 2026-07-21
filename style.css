@@ -134,8 +134,8 @@ article {
     box-shadow: none;
     padding: 0;
     
-    /* Smooth spacing between sections while triggering map changes */
-    margin-bottom: 25vh; 
+    /* Reduced margin so text flows naturally like a continuous article */
+    margin-bottom: 48px;
 }
 
 .step:last-child {
