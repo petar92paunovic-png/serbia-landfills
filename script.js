@@ -30,15 +30,20 @@ const allLayers = [
     'new_sanitary_landfill'
 ];
 
-// Helper function to toggle layer visibility based on active step requirements
+// Helper function to toggle layer visibility safely based on active step requirements
 function showOnly(activeLayers) {
+    // Check if map style has finished loading to prevent undefined property errors
+    if (!map.isStyleLoaded()) return;
+
     allLayers.forEach(layer => {
-        if (map.getLayer(layer)) {
-            if (activeLayers.includes(layer)) {
-                map.setLayoutProperty(layer, 'visibility', 'visible');
-            } else {
-                map.setLayoutProperty(layer, 'visibility', 'none');
+        try {
+            if (map.getLayer(layer)) {
+                const visibility = activeLayers.includes(layer) ? 'visible' : 'none';
+                map.setLayoutProperty(layer, 'visibility', visibility);
             }
+        } catch (err) {
+            // Log warning if layer is not ready yet instead of crashing execution
+            console.warn(`Layer ${layer} is not ready yet:`, err);
         }
     });
 }
@@ -62,7 +67,7 @@ map.on('load', () => {
             const zoom = parseFloat(el.getAttribute('data-zoom')) || 6;
             const pitch = parseFloat(el.getAttribute('data-pitch')) || 0;
 
-            // Safely parse data-layers to prevent script crashes if missing
+            // Safely parse data-layers to prevent script crashes if step has no layer attribute
             const layersAttr = el.getAttribute('data-layers');
             const layers = layersAttr ? layersAttr.split(',').map(s => s.trim()) : [];
 
