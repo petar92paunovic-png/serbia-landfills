@@ -92,12 +92,12 @@ body {
 
 /* ==========================================
    2. SCROLLYTELLING LAYOUT
-   (Text on the LEFT, Sticky Map on the RIGHT)
+   (Continuous Text on LEFT, Sticky Map on RIGHT)
    ========================================== */
 
 #scrolly {
     display: flex;
-    /* Reverses row order so the map sits on the right and text stays on the left */
+    /* Reverses row order so map is on the right and text stays on the left */
     flex-direction: row-reverse; 
     justify-content: space-between;
     position: relative;
@@ -105,7 +105,7 @@ body {
     margin-top: 20px;
 }
 
-/* Left side: Text column */
+/* Left side: Single continuous article column */
 article {
     width: 45%;
     position: relative;
@@ -124,36 +124,36 @@ article {
 }
 
 /* ==========================================
-   3. SCROLL STEPS & SPACING FIXES
+   3. CONTINUOUS TEXT STEPS (NO BOXES)
    ========================================== */
 
 .step {
-    /* Reduced bottom margin to eliminate huge blank spaces between steps */
-    margin-bottom: 30vh; 
-    padding: 24px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Removed background, borders, and shadows to eliminate card boxes */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    
+    /* Smooth spacing between sections while triggering map changes */
+    margin-bottom: 25vh; 
 }
 
 .step:last-child {
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
 }
 
 .step h3 {
+    margin-top: 20px;
     margin-bottom: 12px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .step p {
     margin-bottom: 16px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: #2d3748;
-}
-
-.step p:last-child {
-    margin-bottom: 0;
+    line-height: 1.7;
 }
 
 /* Section Title Colors */
@@ -165,7 +165,6 @@ article {
    4. MEDIA, GALLERIES & EMBEDS FIX
    ========================================== */
 
-/* Restrict all images to their container to prevent overflowing */
 article img,
 .gallery img,
 .media-block img {
@@ -182,7 +181,7 @@ article img,
 .graphic {
     width: 100%;
     max-width: 100%;
-    margin: 20px 0;
+    margin: 24px 0;
     position: relative;
     overflow: hidden;
 }
@@ -247,7 +246,6 @@ article img,
         font-size: 1rem;
     }
 
-    /* Stack map and text vertically on mobile devices */
     #scrolly {
         flex-direction: column-reverse;
     }
@@ -262,7 +260,6 @@ article img,
     }
 
     .step {
-        margin-bottom: 20vh;
-        padding: 16px;
+        margin-bottom: 15vh;
     }
 }
