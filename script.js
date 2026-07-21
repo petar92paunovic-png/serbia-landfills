@@ -55,20 +55,27 @@ map.on('load', () => {
         })
         .onStepEnter(response => {
             const el = response.element;
+            
+            // Safely parse camera settings (fallback to defaults if missing)
             const lat = parseFloat(el.getAttribute('data-lat'));
             const lng = parseFloat(el.getAttribute('data-lng'));
-            const zoom = parseFloat(el.getAttribute('data-zoom'));
-            const pitch = parseFloat(el.getAttribute('data-pitch'));
-            const layers = el.getAttribute('data-layers').split(',').map(s => s.trim());
+            const zoom = parseFloat(el.getAttribute('data-zoom')) || 6;
+            const pitch = parseFloat(el.getAttribute('data-pitch')) || 0;
 
-            // Smoothly transition map camera to new focus coordinates
-            map.flyTo({
-                center: [lng, lat],
-                zoom: zoom,
-                pitch: pitch,
-                essential: true,
-                duration: 2000
-            });
+            // Safely parse data-layers to prevent script crashes if missing
+            const layersAttr = el.getAttribute('data-layers');
+            const layers = layersAttr ? layersAttr.split(',').map(s => s.trim()) : [];
+
+            // Smoothly transition map camera only if coordinates exist for the step
+            if (!isNaN(lat) && !isNaN(lng)) {
+                map.flyTo({
+                    center: [lng, lat],
+                    zoom: zoom,
+                    pitch: pitch,
+                    essential: true,
+                    duration: 2000
+                });
+            }
 
             // Update visible layers for the active step
             showOnly(layers);
@@ -97,5 +104,7 @@ function moveSlide(galleryId, direction) {
     if (newIndex >= slides.length) newIndex = 0;
     if (newIndex < 0) newIndex = slides.length - 1;
 
-    slides[newIndex].classList.add('active');
+    if (slides[newIndex]) {
+        slides[newIndex].classList.add('active');
+    }
 }
