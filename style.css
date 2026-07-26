@@ -272,7 +272,6 @@ article img,
    /* ==========================================
    ROTATE DEVICE OVERLAY (FOR MOBILE PORTRAIT)
    ========================================== */
-
 #rotate-device-overlay {
     display: none;
     position: fixed;
@@ -280,42 +279,52 @@ article img,
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #1a1a1a;
+    background-color: rgba(0, 0, 0, 0.85);
     color: #ffffff;
     z-index: 99999;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
+    overflow: hidden;
 }
 
 .rotate-content {
     max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.phone-icon {
-    font-size: 3rem;
-    margin-bottom: 16px;
-    animation: rotateAnimation 2s infinite ease-in-out;
+.rotate-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 24px;
+    animation: rotateSimulation 2.5s infinite ease-in-out;
 }
 
 .rotate-content p {
     font-size: 1rem;
     line-height: 1.5;
-    color: #e2e8f0;
+    color: #ffffff;
+    font-weight: 400;
 }
 
-@keyframes rotateAnimation {
+@keyframes rotateSimulation {
     0% {
         transform: rotate(0deg);
     }
-    50% {
+    30% {
+        transform: rotate(0deg);
+    }
+    70% {
         transform: rotate(-90deg);
     }
     100% {
-        transform: rotate(0deg);
+        transform: rotate(-90deg);
     }
 }
+
 @media (max-width: 768px) and (orientation: portrait) {
     #rotate-device-overlay {
         display: flex;
