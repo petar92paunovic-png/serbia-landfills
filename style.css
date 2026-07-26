@@ -45,7 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 40px;
+    padding: 40px; 
     box-sizing: border-box;
     color: #ffffff;
 }
@@ -65,7 +65,7 @@ body {
 
 .article-header {
     width: 100%;
-    padding: 0 40px;
+    padding: 0 40px; 
     margin-bottom: 40px;
 }
 
@@ -77,9 +77,9 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* UVODNI TEKST - OD MARGINE DO MARGINE */
 .intro-text {
     width: 100%;
+    max-width: 800px;
 }
 
 .intro-text p {
@@ -99,18 +99,18 @@ body {
     justify-content: space-between;
     position: relative;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px 0 40px; 
     margin-top: 20px;
 }
 
 article {
-    width: 45%;
+    width: 42%; 
     position: relative;
     z-index: 2;
 }
 
 #map {
-    width: 50%;
+    width: 52%;
     height: 100vh;
     position: sticky;
     top: 0;
@@ -120,7 +120,7 @@ article {
 }
 
 /* ==========================================
-   3. STEPS & MEDIA FIXES 
+   3. STEPS & MEDIA FIXES
    ========================================== */
 
 .step {
@@ -128,29 +128,54 @@ article {
     border: none;
     box-shadow: none;
     padding: 0;
-    margin-bottom: 70vh;
+    margin-bottom: 35vh;
+    position: relative;
 }
 
 .step:last-child {
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
 }
 
 .step h3 {
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-size: 1.4rem;
     font-weight: 700;
 }
 
 .step p {
-    margin-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 8px;
     font-size: 1.05rem;
     color: #2d3748;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 .step p:last-child {
     margin-bottom: 0;
+}
+
+.graphic {
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0;
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.graphic iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.gallery, 
+.media-block {
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0;
+    position: relative;
+    overflow: hidden;
 }
 
 article img,
@@ -161,16 +186,6 @@ article img,
     display: block;
     object-fit: cover;
     border-radius: 4px;
-}
-
-.gallery, 
-.media-block, 
-.graphic {
-    width: 100%;
-    max-width: 100%;
-    margin: 16px 0;
-    position: relative;
-    overflow: hidden;
 }
 
 .gallery-slides {
