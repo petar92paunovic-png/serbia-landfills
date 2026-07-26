@@ -16,19 +16,16 @@ function updateMapLayers(activeLayers) {
     // List of all map layers used in the project
     const allLayers = [
         'sanitary_landfill',
-        'dep_duboko',
+        'dep_all',
+        'dep_name',
         'dep_vinca',
         'nonsanitary_active',
-        'dep_bubanj_nis',
         'nonsanitary_disposal_methods',
         'nonsanitary_environmental_hazards',
-        'dep_jovanovac_kragujevac',
         'nonsanitary_safety',
-        'dep_bpalanka',
         'wild_municipality',
-        'cyrcle_leskovac',
+        'leskovac_name',
         'wild_5',
-        'dep_radinac',
         'new_sanitary_landfill'
     ];
 
