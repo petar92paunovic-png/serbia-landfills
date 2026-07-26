@@ -277,35 +277,37 @@ article img,
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 999999;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.88); 
+    z-index: 999999; 
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
+    box-sizing: border-box;
 }
-
 .rotate-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     max-width: 280px;
 }
-
 .rotate-icon {
-    width: 90px;
+    width: 100px;
     height: auto;
     margin-bottom: 20px;
     animation: rotateSimulation 2.5s infinite ease-in-out;
 }
-
 .rotate-content p {
     color: #ffffff;
     font-size: 1rem;
     line-height: 1.4;
     margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @keyframes rotateSimulation {
@@ -316,7 +318,6 @@ article img,
         transform: rotate(-90deg);
     }
 }
-
 @media (max-width: 768px) and (orientation: portrait) {
     #rotate-device-overlay {
         display: flex;
