@@ -245,64 +245,6 @@ article img,
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
-    .hero-container {
-        height: 50vh;
-        min-height: 320px;
-    }
-
-    .hero-title {
-        font-size: 1.75rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    #scrolly {
-        flex-direction: column-reverse;
-        padding: 0 12px;
-    }
-    
-    article {
-        width: 100%;
-    }
-
-    #map {
-        width: 100%;
-        height: 40vh;
-        position: sticky;
-        top: 0;
-        margin-bottom: 20px;
-        z-index: 1;
-    }
-
-    .step {
-        margin-bottom: 60vh;
-        background: rgba(255, 255, 255, 0.92);
-        padding: 16px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-}
-
-@media (max-width: 900px) and (orientation: landscape) {
-    #scrolly {
-        flex-direction: row-reverse;
-        padding: 0 12px;
-    }
-    article {
-        width: 48%;
-    }
-    #map {
-        width: 48%;
-        height: 100vh;
-    }
-    .hero-title {
-        font-size: 1.6rem;
-    }
-}
-
 #rotate-device-overlay {
     display: none;
     position: fixed;
