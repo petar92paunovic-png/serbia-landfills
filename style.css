@@ -19,7 +19,7 @@ body {
 .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 /* ==========================================
@@ -73,6 +73,7 @@ body {
 
 /* Meta info & intro section directly below hero image */
 .article-header {
+    padding: 0 40px;
     margin-bottom: 40px;
 }
 
@@ -102,6 +103,7 @@ body {
     justify-content: space-between;
     position: relative;
     width: 100%;
+    padding: 0 20px 0 40px;
     margin-top: 20px;
 }
 
@@ -251,6 +253,11 @@ article img,
     
     .hero-subtitle {
         font-size: 1rem;
+    }
+
+    .article-header,
+    #scrolly {
+        padding: 0 20px;
     }
 
     #scrolly {
