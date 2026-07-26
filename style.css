@@ -15,6 +15,13 @@ body {
     line-height: 1.6;
 }
 
+/* Base wrapper to align header, intro, and scrollytelling content */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* ==========================================
    1. HERO SECTION & HEADER
    ========================================== */
@@ -35,6 +42,7 @@ body {
     display: block;
 }
 
+/* Dark gradient layer over the hero image for contrast */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -45,7 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 40px 40px 40px; 
+    padding: 40px;
     box-sizing: border-box;
     color: #ffffff;
 }
@@ -63,9 +71,8 @@ body {
     opacity: 0.9;
 }
 
+/* Meta info & intro section directly below hero image */
 .article-header {
-    width: 100%;
-    padding: 0 40px; 
     margin-bottom: 40px;
 }
 
@@ -77,12 +84,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-.intro-text {
-    width: 100%;
-}
-
 .intro-text p {
-    width: 100%;
     font-size: 1.2rem;
     line-height: 1.7;
     color: #333333;
@@ -90,24 +92,27 @@ body {
 
 /* ==========================================
    2. SCROLLYTELLING LAYOUT
+   (Continuous Text on LEFT, Sticky Map on RIGHT)
    ========================================== */
 
 #scrolly {
     display: flex;
+    /* Reverses row order so map is on the right and text stays on the left */
     flex-direction: row-reverse; 
     justify-content: space-between;
     position: relative;
     width: 100%;
-    padding: 0 40px; 
     margin-top: 20px;
 }
 
+/* Left side: Single continuous article column */
 article {
-    width: 45%; 
+    width: 45%;
     position: relative;
     z-index: 2;
 }
 
+/* Right side: Sticky map container */
 #map {
     width: 50%;
     height: 100vh;
@@ -116,10 +121,11 @@ article {
     z-index: 1;
     border-radius: 8px;
     overflow: hidden;
+    pointer-events: none;
 }
 
 /* ==========================================
-   3. STEPS & MEDIA FIXES
+   3. CONTINUOUS TEXT STEPS (NO BOXES)
    ========================================== */
 
 .step {
@@ -127,8 +133,7 @@ article {
     border: none;
     box-shadow: none;
     padding: 0;
-    margin-bottom: 40vh;
-    position: relative;
+    margin-bottom: 0;
 }
 
 .step:last-child {
@@ -136,48 +141,31 @@ article {
 }
 
 .step h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
+    margin-top: 24px;
+    margin-bottom: 16px;
     font-size: 1.4rem;
     font-weight: 700;
 }
 
 .step p {
-    margin-top: 0;
     margin-bottom: 16px;
     font-size: 1.05rem;
     color: #2d3748;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+   
+.step p:last-child,
+.step .media-block:last-child,
+.step .gallery:last-child {
+    margin-bottom: 16px;
 }
 
-.step p:last-child {
-    margin-bottom: 0;
-}
-
-.graphic {
-    width: 100%;
-    max-width: 100%;
-    margin: 16px 0;
-    position: relative;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.graphic iframe {
-    display: block;
-    margin: 0 auto;
-}
-
-.gallery, 
-.media-block {
-    width: 100%;
-    max-width: 100%;
-    margin: 16px 0;
-    position: relative;
-    overflow: hidden;
-}
+/* ==========================================
+   4. MEDIA, GALLERIES & EMBEDS FIX
+   ========================================== */
 
 article img,
+.gallery img,
 .media-block img {
     width: 100%;
     max-width: 100%;
@@ -187,6 +175,17 @@ article img,
     border-radius: 4px;
 }
 
+.gallery, 
+.media-block, 
+.graphic {
+    width: 100%;
+    max-width: 100%;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gallery slideshow container */
 .gallery-slides {
     position: relative;
     width: 100%;
@@ -194,15 +193,13 @@ article img,
 
 .gallery-slides img {
     display: none;
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
 }
 
 .gallery-slides img.active {
-    display: block !important;
+    display: block;
 }
 
+/* Gallery Navigation Buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -217,7 +214,6 @@ article img,
     border-radius: 4px;
     user-select: none;
     transition: background 0.3s ease;
-    z-index: 3;
 }
 
 .prev:hover, .next:hover {
@@ -227,6 +223,7 @@ article img,
 .prev { left: 8px; }
 .next { right: 8px; }
 
+/* Photo Source Tags */
 .source-tag {
     position: absolute;
     bottom: 8px;
@@ -244,7 +241,38 @@ article img,
 }
 
 /* ==========================================
-   4. ROTATE DEVICE OVERLAY FOR PORTRAIT MODE
+   5. RESPONSIVE DESIGN (MOBILE ADAPTATION)
+   ========================================== */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    #scrolly {
+        flex-direction: column-reverse;
+    }
+    
+    article, #map {
+        width: 100%;
+    }
+
+    #map {
+        height: 45vh;
+        margin-bottom: 20px;
+    }
+
+    .step {
+        margin-bottom: 15vh;
+    }
+}
+
+/* ==========================================
+   ROTATE DEVICE OVERLAY (FOR MOBILE PORTRAIT)
    ========================================== */
 
 #rotate-device-overlay {
@@ -252,12 +280,11 @@ article img,
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95); 
-    z-index: 999999; 
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #ffffff;
+    z-index: 999999;
     justify-content: center;
     align-items: center;
     text-align: center;
