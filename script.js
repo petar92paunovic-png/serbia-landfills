@@ -1,13 +1,13 @@
 const scroller = scrollama();
 
 mapboxgl.accessToken =
-  'pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ0dTgzaTQwNzZuMnpzY3k4bHdsdzR3In0.2USgUYibSUrvj5LArK6E8A';
+  'pk.eyJ1IjoicGV0YXI5MiIsImEiOiJjbXJ4bXBndXgwMTdoMnlzNjFxdThkY2duIn0.-w9izP34Eh4UHWsx4C4MDQ';
 
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/petar92/cmrifkhvq000w01s828d2ange', 
-    center: [20.9114, 44.0165],
-    zoom: 6,
+    center: [20.9114, 44.232598],
+    zoom: 5.9,
     pitch: 0
 });
 
