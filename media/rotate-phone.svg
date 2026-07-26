@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="100%" height="100%">
+    <defs>
+        <!-- Uvoz Roboto Bold fonta direktno u SVG -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap');
+            
+            .phone-text {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                font-size: 11px;
+                fill: #ffffff;
+                text-anchor: middle;
+                letter-spacing: 0.8px;
+            }
+        </style>
+
+        <!-- Marker za gornju desnu strelicu -->
+        <marker id="arrow-top" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff" />
+        </marker>
+
+        <!-- Marker za donju levu strelica -->
+        <marker id="arrow-bottom" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff" />
+        </marker>
+    </defs>
+
+    <!-- SPOLJNA KONTURA TELEFONA -->
+    <rect x="62" y="30" width="76" height="150" rx="12" stroke="#ffffff" stroke-width="2.5" fill="none" />
+    
+    <!-- UNUTRAŠNJA IVICA EKRANA -->
+    <rect x="65" y="33" width="70" height="144" rx="9" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.6" />
+
+    <!-- ZVUČNIK PRIPREMA -->
+    <line x1="92" y1="40" x2="108" y2="40" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+    <circle cx="86" cy="40" r="1" fill="#ffffff" />
+
+    <!-- HOME DUGME DOLE -->
+    <circle cx="100" cy="168" r="5" stroke="#ffffff" stroke-width="1.5" fill="none" />
+
+    <!-- DUGLAD SA STRANE (Tasteri za jačinu zvuka/zaključavanje) -->
+    <rect x="59" y="58" width="3" height="10" rx="1" fill="#ffffff" />
+    <rect x="59" y="74" width="3" height="10" rx="1" fill="#ffffff" />
+    <rect x="138" y="66" width="3" height="14" rx="1" fill="#ffffff" />
+
+    <!-- TEKST UNUTAR EKRANA (ROBOTO BOLD) -->
+    <text x="100" y="95" class="phone-text">ROTATE</text>
+    <text x="100" y="110" class="phone-text">YOUR</text>
+    <text x="100" y="125" class="phone-text">PHONE</text>
+
+    <!-- ZAKRIVLJENA STRELICA GORE DESNO -->
+    <path d="M 135 32 A 22 22 0 0 1 162 58" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow-top)" />
+
+    <!-- ZAKRIVLJENA STRELICA DOLE LEVO -->
+    <path d="M 65 178 A 22 22 0 0 1 38 152" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow-bottom)" />
+</svg>
