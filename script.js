@@ -48,7 +48,7 @@ map.on('load', () => {
     scroller
         .setup({
             step: '.step', // HTML elements representing scroll steps
-            offset: 0.5,   // Trigger step when it reaches 50% of the viewport height
+            offset: 0.25,   // Trigger step when it reaches 25% of the viewport height
             debug: false   // Set to true to display visual debug lines
         })
         .onStepEnter(response => {
