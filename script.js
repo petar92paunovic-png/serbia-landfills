@@ -9,6 +9,7 @@ const map = new mapboxgl.Map({
     center: [20.9114, 44.232598],
     zoom: 5.9,
     pitch: 0
+    interactive: false
 });
 
 // Function to handle map layer visibility
