@@ -15,12 +15,6 @@ body {
     line-height: 1.6;
 }
 
-.content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* ==========================================
    1. HERO SECTION & HEADER
    ========================================== */
@@ -70,6 +64,8 @@ body {
 }
 
 .article-header {
+    width: 100%;
+    padding: 0 40px;
     margin-bottom: 40px;
 }
 
@@ -81,7 +77,13 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* UVODNI TEKST - OD MARGINE DO MARGINE */
+.intro-text {
+    width: 100%;
+}
+
 .intro-text p {
+    width: 100%;
     font-size: 1.2rem;
     line-height: 1.7;
     color: #333333;
@@ -97,6 +99,7 @@ body {
     justify-content: space-between;
     position: relative;
     width: 100%;
+    padding: 0 20px;
     margin-top: 20px;
 }
 
@@ -117,7 +120,7 @@ article {
 }
 
 /* ==========================================
-   3. STEPS & MEDIA FIXES
+   3. STEPS & MEDIA FIXES 
    ========================================== */
 
 .step {
@@ -125,31 +128,29 @@ article {
     border: none;
     box-shadow: none;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 70vh;
 }
 
 .step:last-child {
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
 }
 
 .step h3 {
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-top: 0;
+    margin-bottom: 12px;
     font-size: 1.4rem;
     font-weight: 700;
 }
 
 .step p {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     font-size: 1.05rem;
     color: #2d3748;
     line-height: 1.7;
 }
 
-.step p:last-child,
-.step .media-block:last-child,
-.step .gallery:last-child {
-    margin-bottom: 16px;
+.step p:last-child {
+    margin-bottom: 0;
 }
 
 article img,
@@ -167,7 +168,7 @@ article img,
 .graphic {
     width: 100%;
     max-width: 100%;
-    margin: 24px 0;
+    margin: 16px 0;
     position: relative;
     overflow: hidden;
 }
@@ -229,54 +230,7 @@ article img,
 }
 
 /* ==========================================
-   4. RESPONSIVE DESIGN & LANDSCAPE ADAPTATION
-   ========================================== */
-
-@media (max-width: 768px) and (orientation: portrait) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    #scrolly {
-        flex-direction: column-reverse;
-    }
-    
-    article, #map {
-        width: 100%;
-    }
-
-    #map {
-        height: 45vh;
-        margin-bottom: 20px;
-    }
-
-    .step {
-        margin-bottom: 15vh;
-    }
-}
-
-@media (max-width: 900px) and (orientation: landscape) {
-    #scrolly {
-        flex-direction: row-reverse;
-    }
-    article {
-        width: 48%;
-    }
-    #map {
-        width: 48%;
-        height: 100vh;
-    }
-    .hero-title {
-        font-size: 1.6rem;
-    }
-}
-
-/* ==========================================
-   5. ROTATE DEVICE OVERLAY
+   4. ROTATE DEVICE OVERLAY FOR PORTRAIT MODE
    ========================================== */
 
 #rotate-device-overlay {
@@ -286,9 +240,9 @@ article img,
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.88); 
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); 
     z-index: 999999; 
     justify-content: center;
     align-items: center;
@@ -317,7 +271,6 @@ article img,
     font-size: 1rem;
     line-height: 1.4;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @keyframes rotateSimulation {
@@ -329,8 +282,12 @@ article img,
     }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 1024px) and (orientation: portrait) {
     #rotate-device-overlay {
-        display: flex;
+        display: flex !important;
+    }
+
+    body {
+        overflow: hidden;
     }
 }
