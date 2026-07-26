@@ -1,5 +1,5 @@
 /* ==========================================
-   GLOBAL STYLES & RESET
+   1. GLOBAL STYLES & RESET
    ========================================== */
 
 * {
@@ -13,16 +13,26 @@ body {
     color: #1a1a1a;
     background-color: #ffffff;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .content-wrapper {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
 /* ==========================================
-   1. HERO SECTION & HEADER
+   2. HERO SECTION & HEADER
    ========================================== */
 
 .hero-container {
@@ -31,7 +41,7 @@ body {
     height: 70vh;
     min-height: 400px;
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .hero-image {
@@ -47,30 +57,37 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 40px;
+    padding: 40px 20px;
     box-sizing: border-box;
     color: #ffffff;
 }
 
 .hero-title {
+    max-width: 1200px;
+    margin: 0 auto 12px auto;
+    width: 100%;
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 12px;
 }
 
 .hero-subtitle {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
     font-size: 1.25rem;
     font-weight: 400;
     opacity: 0.9;
 }
 
 .article-header {
-    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
 }
 
 .meta-info {
@@ -88,7 +105,7 @@ body {
 }
 
 /* ==========================================
-   2. SCROLLYTELLING LAYOUT
+   3. SCROLLYTELLING LAYOUT
    ========================================== */
 
 #scrolly {
@@ -97,7 +114,9 @@ body {
     justify-content: space-between;
     position: relative;
     width: 100%;
-    margin-top: 20px;
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
 }
 
 article {
@@ -117,7 +136,7 @@ article {
 }
 
 /* ==========================================
-   3. STEPS & MEDIA FIXES
+   4. STEPS, MEDIA & DATAWRAPPER FIXES
    ========================================== */
 
 .step {
@@ -125,11 +144,11 @@ article {
     border: none;
     box-shadow: none;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 80vh;
 }
 
 .step:last-child {
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
 }
 
 .step h3 {
@@ -137,6 +156,19 @@ article {
     margin-bottom: 16px;
     font-size: 1.4rem;
     font-weight: 700;
+    line-height: 1.3;
+}
+
+.sub-sanitary {
+    color: #1b4965;
+}
+
+.sub-nonsanitary {
+    color: #c9184a;
+}
+
+.sub-wild {
+    color: #6b705c;
 }
 
 .step p {
@@ -148,7 +180,8 @@ article {
 
 .step p:last-child,
 .step .media-block:last-child,
-.step .gallery:last-child {
+.step .gallery:last-child,
+.step .graphic:last-child {
     margin-bottom: 16px;
 }
 
@@ -229,12 +262,17 @@ article img,
 }
 
 /* ==========================================
-   4. RESPONSIVE DESIGN & LANDSCAPE ADAPTATION
+   5. RESPONSIVE DESIGN (MOBILNI & TABLET)
    ========================================== */
 
 @media (max-width: 768px) and (orientation: portrait) {
+    .hero-container {
+        height: 50vh;
+        min-height: 320px;
+    }
+
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
     }
     
     .hero-subtitle {
@@ -243,25 +281,35 @@ article img,
 
     #scrolly {
         flex-direction: column-reverse;
+        padding: 0 12px;
     }
     
-    article, #map {
+    article {
         width: 100%;
     }
 
     #map {
-        height: 45vh;
+        width: 100%;
+        height: 40vh;
+        position: sticky;
+        top: 0;
         margin-bottom: 20px;
+        z-index: 1;
     }
 
     .step {
-        margin-bottom: 15vh;
+        margin-bottom: 60vh;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
     #scrolly {
         flex-direction: row-reverse;
+        padding: 0 12px;
     }
     article {
         width: 48%;
@@ -276,7 +324,7 @@ article img,
 }
 
 /* ==========================================
-   5. ROTATE DEVICE OVERLAY
+   6. ROTATE DEVICE OVERLAY
    ========================================== */
 
 #rotate-device-overlay {
@@ -288,7 +336,7 @@ article img,
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.88); 
+    background-color: rgba(0, 0, 0, 0.92); 
     z-index: 999999; 
     justify-content: center;
     align-items: center;
@@ -306,7 +354,7 @@ article img,
 }
 
 .rotate-icon {
-    width: 100px;
+    width: 90px;
     height: auto;
     margin-bottom: 20px;
     animation: rotateSimulation 2.5s infinite ease-in-out;
