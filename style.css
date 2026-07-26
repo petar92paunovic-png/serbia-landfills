@@ -1,7 +1,3 @@
-/* ==========================================
-   1. GLOBAL STYLES & RESET
-   ========================================== */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,10 +26,6 @@ a {
 a:hover {
     color: #0056b3;
 }
-
-/* ==========================================
-   2. HERO SECTION & HEADER
-   ========================================== */
 
 .hero-container {
     position: relative;
@@ -104,10 +96,6 @@ a:hover {
     color: #333333;
 }
 
-/* ==========================================
-   3. SCROLLYTELLING LAYOUT
-   ========================================== */
-
 #scrolly {
     display: flex;
     flex-direction: row-reverse; 
@@ -134,10 +122,6 @@ article {
     border-radius: 8px;
     overflow: hidden;
 }
-
-/* ==========================================
-   4. STEPS, MEDIA & DATAWRAPPER FIXES
-   ========================================== */
 
 .step {
     background: transparent;
@@ -261,10 +245,6 @@ article img,
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* ==========================================
-   5. RESPONSIVE DESIGN (MOBILNI & TABLET)
-   ========================================== */
-
 @media (max-width: 768px) and (orientation: portrait) {
     .hero-container {
         height: 50vh;
@@ -322,10 +302,6 @@ article img,
         font-size: 1.6rem;
     }
 }
-
-/* ==========================================
-   6. ROTATE DEVICE OVERLAY
-   ========================================== */
 
 #rotate-device-overlay {
     display: none;
