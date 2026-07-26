@@ -6,51 +6,45 @@
     <title>Serbia Buried in Waste</title>
 
     <!-- Mapbox GL JS -->
-<link
-  href="https://api.mapbox.com/mapbox-gl-js/v3.25.0/mapbox-gl.css"
-  rel="stylesheet"
-/>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.25.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.25.0/mapbox-gl.js"></script>
 
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.25.0/mapbox-gl.js"></script>
+    <!-- Scrollama JS for scrollytelling -->
+    <script src="https://unpkg.com/scrollama"></script>
 
-<!-- Scrollama JS for scrollytelling -->
-<script src="https://unpkg.com/scrollama"></script>
-
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <!-- rotate for phone -->
-<div id="rotate-device-overlay">
-    <div class="rotate-content">
-       <img src="media/rotate-phone.svg" alt="Rotate phone" class="rotate-icon">
+    <!-- rotate for phone -->
+    <div id="rotate-device-overlay">
+        <div class="rotate-content">
+           <img src="media/rotate-phone.svg" alt="Rotate phone" class="rotate-icon">
+        </div>
     </div>
-</div>
 
-        <!-- 1. HERO PHOTO WITH TITLE AND SUBTITLE OVERLAY -->
-        <header class="hero-container">
-            <img src="media/BACKGROUND.jpg" alt="Landfill on fire" class="hero-image">
-            <div class="hero-overlay">
-                <h1 class="hero-title">Serbia Buried in Waste: The Cost of Laws Left Unenforced</h1>
-                <h2 class="hero-subtitle">Pollution released into the air, soil and water gradually enters the food chain.</h2>
-            </div>
-        </header>
-<div class="content-wrapper">
-        <!-- 2. DATE, AUTHOR AND INTRODUCTORY TEXT -->
-               <section class="article-header">
-               <div class="meta-info">
-               <span class="date">22. jul 2026.</span> &bull; <span class="author">By <a href="https://github.com/petar92paunovic-png" target="_blank" rel="noopener noreferrer">Petar Paunović</a></span>
-               </div>
-            <div class="intro-text">
-                <p>Only one in fifteen municipal dumpsites meets the legal standard for waste disposal. Less than 10 per cent of Serbia's household waste ends up at properly managed sanitary landfills. The rest is dumped at sites that pose a risk to surrounding land and groundwater. Serbia's waste is poorly managed not because the country lacks environmental laws, but because it repeatedly fails to enforce them.</p>
-            </div>
-        </section>
+    <!-- 1. HERO PHOTO WITH TITLE AND SUBTITLE OVERLAY -->
+    <header class="hero-container">
+        <img src="media/BACKGROUND.jpg" alt="Landfill on fire" class="hero-image">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Serbia Buried in Waste: The Cost of Laws Left Unenforced</h1>
+            <h2 class="hero-subtitle">Pollution released into the air, soil and water gradually enters the food chain.</h2>
+        </div>
+    </header>
+
+    <!-- 2. DATE, AUTHOR AND INTRODUCTORY TEXT -->
+    <section class="article-header">
+        <div class="meta-info">
+            <span class="date">22. jul 2026.</span> &bull; <span class="author">By <a href="https://github.com/petar92paunovic-png" target="_blank" rel="noopener noreferrer">Petar Paunović</a></span>
+        </div>
+        <div class="intro-text">
+            <p>Only one in fifteen municipal dumpsites meets the legal standard for waste disposal. Less than 10 per cent of Serbia's household waste ends up at properly managed sanitary landfills. The rest is dumped at sites that pose a risk to surrounding land and groundwater. Serbia's waste is poorly managed not because the country lacks environmental laws, but because it repeatedly fails to enforce them.</p>
+        </div>
+    </section>
 
         <!-- 3. SCROLLYTELLING MAIN CONTAINER -->
         <main id="scrolly">
-            
             <!-- MAP - LEFT SIDE -->
             <div id="map"></div>
-
             <!-- TEXT AND STEPS - RIGHT SIDE -->
             <article>
 
@@ -97,7 +91,7 @@
                 </section>
 
     <!-- STEP 5 SANITARY VINCA ZOOM --> 
-                <section class="step" data-lat="44.778866" data-lng="20.588295" data-zoom="14" data-pitch="0" data-layers="sanitary_landfill,dep_vinca, dep_name">
+                <section class="step" data-lat="44.782742" data-lng="20.600344" data-zoom="13.5" data-pitch="0" data-layers="sanitary_landfill,dep_vinca, dep_name">
                     <p>Today, Belgrade's only sanitary landfill receives around 1,500 tonnes of waste every day. It is also the largest in Serbia. Yet the capital has had a landfill built to modern environmental standards only since 2021, when a new 24-hectare disposal cell with an impermeable liner was put into operation.</p>
                     <p>For the previous 44 years, from 1977 to 2021, waste at Vinča was simply deposited layer by layer across some 65 hectares. Without a landfill gas collection system, fires were frequent, contributing to air pollution across much of Belgrade.</p>
                     <p>The site also lacked a leachate collection system, allowing contaminated liquids to seep into the ground only a short distance from the Danube, Serbia's largest river and one of Europe's longest.</p>
