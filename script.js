@@ -58,9 +58,19 @@ map.on('load', () => {
             // Extract coordinates and zoom attributes from HTML
             const lat = parseFloat(el.getAttribute('data-lat'));
             const lng = parseFloat(el.getAttribute('data-lng'));
-            const zoom = parseFloat(el.getAttribute('data-zoom'));
+            const baseZoom = parseFloat(el.getAttribute('data-zoom'));
             const pitch = parseFloat(el.getAttribute('data-pitch')) || 0;
             const layersAttr = el.getAttribute('data-layers');
+
+            // Dinamičko prilagođavanje zooma na osnovu širine prozora
+            let zoom = baseZoom;
+            if (!isNaN(baseZoom)) {
+                if (window.innerWidth <= 1024) {
+                    zoom = baseZoom - 1; // Manji zoom za telefone/tablete
+                } else if (window.innerWidth >= 1600) {
+                    zoom = baseZoom + 1; // Veći zoom za velike ekrane
+                }
+            }
 
             // Smoothly fly to the target coordinates
             if (!isNaN(lat) && !isNaN(lng)) {
@@ -111,8 +121,3 @@ function moveSlide(galleryId, direction) {
     // Display the new active slide
     slides[newIndex].classList.add('active');
 }
-
-
-
-
-
