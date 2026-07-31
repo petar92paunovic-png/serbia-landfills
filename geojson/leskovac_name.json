@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [21.939500, 42.986000]
+      },
+      "properties": {
+        "id": 1,
+        "name": "Opšta bolnica Leskovac"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [21.954900, 42.986000]
+      },
+      "properties": {
+        "id": 2,
+        "name": "Tehnološki fakultet"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [21.947200, 42.991600]
+      },
+      "properties": {
+        "id": 3,
+        "name": "Visoka poslovna škola"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [21.947200, 42.980400]
+      },
+      "properties": {
+        "id": 4,
+        "name": "OŠ Petar Tasić"
+      }
+    }
+  ]
+}
